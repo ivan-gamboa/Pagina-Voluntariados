@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.header {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 15%;
+}
+.header-nav {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+.header-nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 15%;
+}
