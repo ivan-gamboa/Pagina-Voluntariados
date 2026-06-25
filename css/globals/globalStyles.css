@@ -1,8 +1,12 @@
 body {
-    font-family: "Platform-Regular";
+    font-family: "Platform-Regular", sans-serif;
     color: var(--color-texto);
     height: 100vh;
     font-size: 100%;
+}
+a {
+    color: var(--color-texto);
+    text-decoration: none;
 }
 
 :root {
@@ -11,6 +15,7 @@ body {
     --color-principal: #14417b;
     --color-secundario: #ed8634;
     --color-terciario: #00a4bd;
+    --color-terciarioDegradado: #00a4bd73;
 
 }
 
