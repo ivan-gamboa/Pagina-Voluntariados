@@ -1,0 +1,29 @@
+body {
+    font-family: "Platform-Regular";
+    color: var(--color-texto);
+    height: 100vh;
+    font-size: 100%;
+}
+
+:root {
+    --color-texto: #f4f4f4;
+    --color-fondo: #f4f4f4;
+    --color-principal: #14417b;
+    --color-secundario: #ed8634;
+    --color-terciario: #00a4bd;
+
+}
+
+/* Celus */
+@media (max-width: 480px) {
+    body {
+        font-size: 70%;
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 90%;
+    }
+}
