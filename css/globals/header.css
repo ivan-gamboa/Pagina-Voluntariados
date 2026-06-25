@@ -30,6 +30,10 @@
 .header-logo-text {
     font-family: "Platform-Bold", sans-serif;
 }
+.nav-toggle {
+    display: none;
+}
+
 .header-nav {
     display: flex;
     justify-content: center;
@@ -54,8 +58,7 @@
 }
 .header-nav-list li a:hover{
     color: var(--color-secundario);
-    transition: color 0.3s ease;
-    transition: font-weight 0.3s ease;
+    transition: color 0.2s ease;
 }
 .header-user {
     display: flex;
@@ -65,9 +68,41 @@
     width: 15%;
 
 }
-.header-user-actions:hover {
-    color: var(--color-secundario);
-    font-size: 1.15rem;
-    transition: color 0.3s ease;
-    transition: font-size 0.3s ease;    
+.header-user-actions a:hover {
+    font-size: 1.15rem;    
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1em;
+    }
+    .header-logo {
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-toggle {
+        width: 2em;
+        height: 2em;
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 3.8em;
+        left: 1.5em;
+    }
+    .fa-bars {
+        font-size: 2rem;
+    }
+    .header-nav {
+        display: none;
+    }
+    .header-nav-list {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .header-user {
+        display: none;
+    }
 }

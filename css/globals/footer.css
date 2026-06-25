@@ -1,5 +1,5 @@
 .footer {
-    background: linear-gradient(to right, var(--color-terciario), var(--color-secundario));
+    background: linear-gradient(to right, var(--color-terciarioDegradado), var(--color-secundario));
     color: var(--color-texto);
     padding: 1rem;
     display: flex;
