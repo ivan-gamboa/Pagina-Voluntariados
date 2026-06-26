@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <link rel="icon" href="../img/Logo Voluntariados.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Voluntariado La Matanza | Municipio de La Matanza</title>
 
     <!-- Bootstrap 5.3 -->
@@ -17,17 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 
-    <link rel="stylesheet" href="../css/homePage.css">
-    <link rel="stylesheet" href="../css/globals/header.css">
-    <link rel="stylesheet" href="../css/globals/footer.css">
-=======
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/globals/globalStyles.css">
     <link rel="stylesheet" href="../css/homePage.css">
     <link rel="stylesheet" href="../css/globals/header.css">
     <link rel="stylesheet" href="../css/globals/footer.css">
     <title>Voluntariados La Matanza</title>
->>>>>>> origin/globals
 </head>
 
 <body>
@@ -55,55 +49,39 @@
         </div>
     </header>
     <main>
-<<<<<<< HEAD
-        <section class="hero-section">
+     
+   <section class="hero-section hero-section--bg">
+    <!-- Imagen de fondo del Hero -->
+    <div class="hero-bg img-placeholder">
+      <!-- TODO: reemplazar por foto real de vecinos en jornada de voluntariado (plantando árboles / pintando escuela / comedor) -->
+      <img src="../img/hero-voluntariado.jpg"
+           alt="Vecinos de La Matanza plantando árboles en una jornada de voluntariado municipal"
+           class="hero-bg-img"
+           onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+      <div class="img-placeholder-label">
+        <i class="bi bi-image"></i> Foto: vecinos en jornada de voluntariado
+      </div>
+    </div>
+ 
+    <!-- Overlay, hermano de hero-bg, no hijo -->
+    <div class="hero-overlay"></div>
+ 
     <div class="container">
-      <div class="row align-items-center g-5">
+      <div class="row">
         <div class="col-lg-7">
-          <span class="eyebrow">
-            <i class="bi bi-patch-check-fill"></i> Programa Municipal de Voluntariado
-          </span>
-          <h1 class="hero-title">Sumate a transformar La Matanza</h1>
-          <p class="hero-text">
+          <h1 class="hero-title hero-title--on-photo">Sumate a transformar La Matanza</h1>
+          <p class="hero-text hero-text--on-photo">
             Participá en programas de voluntariado impulsados por el Municipio y colaborá en
             iniciativas ambientales, educativas y sociales que generan un impacto positivo
             en nuestra comunidad.
           </p>
           <div class="d-flex flex-wrap gap-3 mt-4">
-            <a href="#inscripcion" class="btn btn-primary-vlm btn-lg rounded-4 px-4">
+            <a href="#inscripcion" class="btn btn-accent-vlm btn-lg rounded-4 px-4">
               Quiero ser voluntario
             </a>
-            <a href="#programas" class="btn btn-outline-vlm btn-lg rounded-4 px-4">
+            <a href="#programas" class="btn btn-outline-vlm-on-photo btn-lg rounded-4 px-4">
               Explorar programas
             </a>
-          </div>
- 
-          <div class="hero-stats d-flex flex-wrap gap-4 mt-5">
-            <div>
-              <span class="stat-number">+1.200</span>
-              <span class="stat-label">vecinos voluntarios</span>
-            </div>
-            <div>
-              <span class="stat-number">35</span>
-              <span class="stat-label">programas activos</span>
-            </div>
-            <div>
-              <span class="stat-number">19</span>
-              <span class="stat-label">localidades alcanzadas</span>
-            </div>
-          </div>
-        </div>
- 
-        <div class="col-lg-5">
-          <div class="hero-img-wrap shadow-sm rounded-4 img-placeholder">
-            <!-- TODO: reemplazar por foto real de vecinos en jornada de voluntariado (plantando árboles / pintando escuela / comedor) -->
-            <img src="img/hero-voluntariado.jpg"
-                 alt="Vecinos de La Matanza plantando árboles en una jornada de voluntariado municipal"
-                 class="hero-img rounded-4"
-                 onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
-            <div class="img-placeholder-label">
-              <i class="bi bi-image"></i> Foto: vecinos en jornada de voluntariado
-            </div>
           </div>
         </div>
       </div>
@@ -342,59 +320,6 @@
     </div>
   </section>
  
-  <!-- ============ SECCIÓN 6: Mapa interactivo ============ -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <span class="section-eyebrow">Mapa interactivo</span>
-          <p class="section-lead text-lg-start">
-            Consultá los lugares donde se desarrollan las actividades de voluntariado
-            y encontrá la opción más cercana.
-          </p>
-          <a href="#" class="btn btn-primary-vlm btn-lg rounded-4 px-4 mt-3">
-            Explorar mapa completo
-          </a>
-          <p class="map-note mt-3">
-            <i class="bi bi-info-circle"></i>
-            Esta es solo una vista previa. Al hacer clic accederás a la pantalla
-            dedicada del mapa completo del proyecto.
-          </p>
-        </div>
- 
-        <div class="col-lg-7">
-          <div class="map-preview shadow-sm rounded-4">
-            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="map-svg" role="img" aria-label="Vista previa del mapa de La Matanza con marcadores de actividades">
-              <rect width="600" height="400" fill="#EAF1FB"/>
-              <path d="M40 60 L160 40 L280 70 L320 140 L260 220 L300 300 L220 360 L120 340 L60 280 L30 180 Z" fill="#D7E6F7" stroke="#BBD3EE" stroke-width="2"/>
-              <path d="M120 90 Q 250 150 200 280 Q 180 330 130 320" fill="none" stroke="#BBD3EE" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
-              <g>
-                <circle cx="150" cy="120" r="14" fill="#0B4EA2"/>
-                <circle cx="150" cy="120" r="5" fill="#FFFFFF"/>
-              </g>
-              <g>
-                <circle cx="260" cy="180" r="14" fill="#2E7D32"/>
-                <circle cx="260" cy="180" r="5" fill="#FFFFFF"/>
-              </g>
-              <g>
-                <circle cx="190" cy="260" r="14" fill="#2F80ED"/>
-                <circle cx="190" cy="260" r="5" fill="#FFFFFF"/>
-              </g>
-              <g>
-                <circle cx="100" cy="230" r="14" fill="#0B4EA2"/>
-                <circle cx="100" cy="230" r="5" fill="#FFFFFF"/>
-              </g>
-              <g>
-                <circle cx="320" cy="120" r="14" fill="#2F80ED"/>
-                <circle cx="320" cy="120" r="5" fill="#FFFFFF"/>
-              </g>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
- 
   <!-- ============ SECCIÓN FINAL: CTA ============ -->
   <section class="final-cta-section" id="inscripcion">
     <div class="container text-center">
@@ -403,17 +328,9 @@
         Cada jornada suma para construir una comunidad más unida, solidaria y comprometida
         con el bienestar de todos los vecinos.
       </p>
-      <a href="#" class="btn btn-light btn-lg rounded-4 px-5 fw-semibold">Quiero ser voluntario</a>
+      <a href="#" class="btn btn-accent-vlm btn-lg rounded-4 px-4">Quiero ser voluntario</a>
     </div>
   </section>
- 
-=======
-        <div class="main-content">
-            <h1>Proyectos</h1>
-            <p>Explora oportunidades de voluntariado y haz la diferencia en tu comunidad.</p>
-            <a href="#" class="cta-button">Ver Proyectos</a>
-        </div>
->>>>>>> origin/globals
     </main>
     <footer class="footer">
             <div class="footer-links">
