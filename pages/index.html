@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado La Matanza | Municipio de La Matanza</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+
     <link rel="stylesheet" href="../css/homePage.css">
     <link rel="stylesheet" href="../css/globals/header.css">
     <link rel="stylesheet" href="../css/globals/footer.css">
-    <title>Voluntariados</title>
 </head>
 <body>
     <header class="header">
@@ -27,6 +37,357 @@
         </div>
     </header>
     <main>
+        <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <span class="eyebrow">
+            <i class="bi bi-patch-check-fill"></i> Programa Municipal de Voluntariado
+          </span>
+          <h1 class="hero-title">Sumate a transformar La Matanza</h1>
+          <p class="hero-text">
+            Participá en programas de voluntariado impulsados por el Municipio y colaborá en
+            iniciativas ambientales, educativas y sociales que generan un impacto positivo
+            en nuestra comunidad.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#inscripcion" class="btn btn-primary-vlm btn-lg rounded-4 px-4">
+              Quiero ser voluntario
+            </a>
+            <a href="#programas" class="btn btn-outline-vlm btn-lg rounded-4 px-4">
+              Explorar programas
+            </a>
+          </div>
+ 
+          <div class="hero-stats d-flex flex-wrap gap-4 mt-5">
+            <div>
+              <span class="stat-number">+1.200</span>
+              <span class="stat-label">vecinos voluntarios</span>
+            </div>
+            <div>
+              <span class="stat-number">35</span>
+              <span class="stat-label">programas activos</span>
+            </div>
+            <div>
+              <span class="stat-number">19</span>
+              <span class="stat-label">localidades alcanzadas</span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-5">
+          <div class="hero-img-wrap shadow-sm rounded-4 img-placeholder">
+            <!-- TODO: reemplazar por foto real de vecinos en jornada de voluntariado (plantando árboles / pintando escuela / comedor) -->
+            <img src="img/hero-voluntariado.jpg"
+                 alt="Vecinos de La Matanza plantando árboles en una jornada de voluntariado municipal"
+                 class="hero-img rounded-4"
+                 onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+            <div class="img-placeholder-label">
+              <i class="bi bi-image"></i> Foto: vecinos en jornada de voluntariado
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SECCIÓN 2: ¿Por qué participar? ============ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="section-eyebrow">¿Por qué participar?</span>
+          <p class="section-lead">
+            Cada acción cuenta. Sumarte como voluntario es una oportunidad para colaborar
+            con tu comunidad, conocer nuevas personas y contribuir al desarrollo de un
+            municipio más solidario.
+          </p>
+        </div>
+      </div>
+ 
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card vlm-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <div class="vlm-icon-circle mx-auto mb-3">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h3 class="card-title-vlm">Participación ciudadana</h3>
+            <p class="card-text-vlm">
+              Formá parte de proyectos que generan un impacto positivo en tu barrio.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card vlm-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <div class="vlm-icon-circle mx-auto mb-3">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <h3 class="card-title-vlm">Generá un cambio</h3>
+            <p class="card-text-vlm">
+              Colaborá en actividades ambientales, educativas y sociales.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card vlm-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <div class="vlm-icon-circle mx-auto mb-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h3 class="card-title-vlm">Actividades cerca tuyo</h3>
+            <p class="card-text-vlm">
+              Encontrá jornadas de voluntariado distribuidas en distintos puntos de La Matanza.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SECCIÓN 3: Programas de voluntariado ============ -->
+  <section class="section-padding bg-alt" id="programas">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7">
+          <span class="section-eyebrow">Programas de voluntariado</span>
+          <p class="section-lead">Elegí el área en la que querés colaborar.</p>
+        </div>
+      </div>
+ 
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card vlm-program-card h-100 border-0 shadow-sm rounded-4 p-4">
+            <div class="program-icon mb-3"><i class="bi bi-tree-fill"></i></div>
+            <h3 class="card-title-vlm">Medio Ambiente</h3>
+            <p class="card-text-vlm">
+              Jornadas de forestación, limpieza y recuperación de espacios verdes.
+            </p>
+            <a href="#" class="program-link mt-auto">Ver programa <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card vlm-program-card h-100 border-0 shadow-sm rounded-4 p-4">
+            <div class="program-icon mb-3"><i class="bi bi-book-fill"></i></div>
+            <h3 class="card-title-vlm">Educación</h3>
+            <p class="card-text-vlm">
+              Apoyo escolar y actividades recreativas.
+            </p>
+            <a href="#" class="program-link mt-auto">Ver programa <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card vlm-program-card h-100 border-0 shadow-sm rounded-4 p-4">
+            <div class="program-icon mb-3"><i class="bi bi-cup-hot-fill"></i></div>
+            <h3 class="card-title-vlm">Comedores Comunitarios</h3>
+            <p class="card-text-vlm">
+              Preparación y distribución de alimentos.
+            </p>
+            <a href="#" class="program-link mt-auto">Ver programa <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card vlm-program-card h-100 border-0 shadow-sm rounded-4 p-4">
+            <div class="program-icon mb-3"><i class="bi bi-heart-fill"></i></div>
+            <h3 class="card-title-vlm">Protección Animal</h3>
+            <p class="card-text-vlm">
+              Campañas de adopción y cuidado responsable.
+            </p>
+            <a href="#" class="program-link mt-auto">Ver programa <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card vlm-program-card h-100 border-0 shadow-sm rounded-4 p-4">
+            <div class="program-icon mb-3"><i class="bi bi-emoji-smile-fill"></i></div>
+            <h3 class="card-title-vlm">Adultos Mayores</h3>
+            <p class="card-text-vlm">
+              Actividades recreativas y acompañamiento.
+            </p>
+            <a href="#" class="program-link mt-auto">Ver programa <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SECCIÓN 4: Actividades destacadas ============ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7">
+          <span class="section-eyebrow">Actividades destacadas</span>
+          <p class="section-lead">Conocé algunas de las próximas jornadas organizadas por el Municipio.</p>
+        </div>
+      </div>
+ 
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="ratio ratio-4x3 img-placeholder">
+              <!-- TODO: reemplazar por foto real de jornada de reforestación -->
+              <img src="img/actividad-reforestacion.jpg"
+                   alt="Jornada de reforestación urbana en San Justo" class="activity-img"
+                   onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+              <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: reforestación</div>
+            </div>
+            <div class="card-body p-4">
+              <span class="badge-vlm mb-2"><i class="bi bi-tree-fill"></i> Medio Ambiente</span>
+              <h3 class="card-title-vlm">Reforestación Urbana</h3>
+              <ul class="activity-meta list-unstyled mb-3">
+                <li><i class="bi bi-calendar3"></i> 22 de julio</li>
+                <li><i class="bi bi-geo-alt"></i> San Justo</li>
+                <li><i class="bi bi-people"></i> 20 voluntarios</li>
+              </ul>
+              <a href="#" class="btn btn-outline-vlm rounded-4 w-100">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-4">
+          <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="ratio ratio-4x3 img-placeholder">
+              <!-- TODO: reemplazar por foto real de comedor comunitario / jornada solidaria -->
+              <img src="img/actividad-jornada-solidaria.jpg"
+                   alt="Jornada solidaria de comedor comunitario en González Catán" class="activity-img"
+                   onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+              <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: jornada solidaria</div>
+            </div>
+            <div class="card-body p-4">
+              <span class="badge-vlm mb-2"><i class="bi bi-cup-hot-fill"></i> Comedores Comunitarios</span>
+              <h3 class="card-title-vlm">Jornada Solidaria</h3>
+              <ul class="activity-meta list-unstyled mb-3">
+                <li><i class="bi bi-calendar3"></i> 27 de julio</li>
+                <li><i class="bi bi-geo-alt"></i> González Catán</li>
+                <li><i class="bi bi-people"></i> 15 voluntarios</li>
+              </ul>
+              <a href="#" class="btn btn-outline-vlm rounded-4 w-100">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-4">
+          <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="ratio ratio-4x3 img-placeholder">
+              <!-- TODO: reemplazar por foto real de apoyo escolar -->
+              <img src="img/actividad-apoyo-escolar.jpg"
+                   alt="Apoyo escolar a estudiantes en Ramos Mejía" class="activity-img"
+                   onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+              <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: apoyo escolar</div>
+            </div>
+            <div class="card-body p-4">
+              <span class="badge-vlm mb-2"><i class="bi bi-book-fill"></i> Educación</span>
+              <h3 class="card-title-vlm">Apoyo Escolar</h3>
+              <ul class="activity-meta list-unstyled mb-3">
+                <li><i class="bi bi-calendar3"></i> 3 de agosto</li>
+                <li><i class="bi bi-geo-alt"></i> Ramos Mejía</li>
+                <li><i class="bi bi-people"></i> 12 voluntarios</li>
+              </ul>
+              <a href="#" class="btn btn-outline-vlm rounded-4 w-100">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SECCIÓN 5: ¿Cómo participar? ============ -->
+  <section class="section-padding bg-alt">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7">
+          <span class="section-eyebrow">¿Cómo participar?</span>
+        </div>
+      </div>
+ 
+      <div class="row g-4 steps-row">
+        <div class="col-md-4">
+          <div class="step-item text-center">
+            <div class="step-icon mx-auto mb-3"><i class="bi bi-search"></i></div>
+            <span class="step-number">Paso 1</span>
+            <h3 class="card-title-vlm">Elegí un programa</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-item text-center">
+            <div class="step-icon mx-auto mb-3"><i class="bi bi-pencil-square"></i></div>
+            <span class="step-number">Paso 2</span>
+            <h3 class="card-title-vlm">Completá el formulario</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-item text-center">
+            <div class="step-icon mx-auto mb-3"><i class="bi bi-hand-thumbs-up"></i></div>
+            <span class="step-number">Paso 3</span>
+            <h3 class="card-title-vlm">Participá en la actividad</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SECCIÓN 6: Mapa interactivo ============ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <span class="section-eyebrow">Mapa interactivo</span>
+          <p class="section-lead text-lg-start">
+            Consultá los lugares donde se desarrollan las actividades de voluntariado
+            y encontrá la opción más cercana.
+          </p>
+          <a href="#" class="btn btn-primary-vlm btn-lg rounded-4 px-4 mt-3">
+            Explorar mapa completo
+          </a>
+          <p class="map-note mt-3">
+            <i class="bi bi-info-circle"></i>
+            Esta es solo una vista previa. Al hacer clic accederás a la pantalla
+            dedicada del mapa completo del proyecto.
+          </p>
+        </div>
+ 
+        <div class="col-lg-7">
+          <div class="map-preview shadow-sm rounded-4">
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="map-svg" role="img" aria-label="Vista previa del mapa de La Matanza con marcadores de actividades">
+              <rect width="600" height="400" fill="#EAF1FB"/>
+              <path d="M40 60 L160 40 L280 70 L320 140 L260 220 L300 300 L220 360 L120 340 L60 280 L30 180 Z" fill="#D7E6F7" stroke="#BBD3EE" stroke-width="2"/>
+              <path d="M120 90 Q 250 150 200 280 Q 180 330 130 320" fill="none" stroke="#BBD3EE" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+              <g>
+                <circle cx="150" cy="120" r="14" fill="#0B4EA2"/>
+                <circle cx="150" cy="120" r="5" fill="#FFFFFF"/>
+              </g>
+              <g>
+                <circle cx="260" cy="180" r="14" fill="#2E7D32"/>
+                <circle cx="260" cy="180" r="5" fill="#FFFFFF"/>
+              </g>
+              <g>
+                <circle cx="190" cy="260" r="14" fill="#2F80ED"/>
+                <circle cx="190" cy="260" r="5" fill="#FFFFFF"/>
+              </g>
+              <g>
+                <circle cx="100" cy="230" r="14" fill="#0B4EA2"/>
+                <circle cx="100" cy="230" r="5" fill="#FFFFFF"/>
+              </g>
+              <g>
+                <circle cx="320" cy="120" r="14" fill="#2F80ED"/>
+                <circle cx="320" cy="120" r="5" fill="#FFFFFF"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SECCIÓN FINAL: CTA ============ -->
+  <section class="final-cta-section" id="inscripcion">
+    <div class="container text-center">
+      <h2 class="final-cta-title">Tu participación hace la diferencia</h2>
+      <p class="final-cta-text">
+        Cada jornada suma para construir una comunidad más unida, solidaria y comprometida
+        con el bienestar de todos los vecinos.
+      </p>
+      <a href="#" class="btn btn-light btn-lg rounded-4 px-5 fw-semibold">Quiero ser voluntario</a>
+    </div>
+  </section>
+ 
     </main>
     <footer class="footer">
     </footer>

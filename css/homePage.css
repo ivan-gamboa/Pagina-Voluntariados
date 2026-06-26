@@ -1,0 +1,465 @@
+/* ============================================================
+   Voluntariado La Matanza — Estilos personalizados
+   Complementan Bootstrap 5.3, no lo reemplazan.
+   ============================================================ */
+
+:root {
+  --color-primario: #0B4EA2;
+  --color-secundario: #2F80ED;
+  --color-fondo: #FFFFFF;
+  --color-fondo-alt: #F5F7FA;
+  --color-texto: #1E293B;
+  --color-texto-secundario: #64748B;
+  --color-positivo: #2E7D32;
+
+  --container-max: 1200px;
+  --section-gap: 110px;
+  --padding-lateral: 80px;
+}
+
+/* ============ BASE ============ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--container-max);
+  padding-left: var(--padding-lateral);
+  padding-right: var(--padding-lateral);
+}
+
+@media (max-width: 991.98px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-texto);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-padding {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+@media (max-width: 767.98px) {
+  .section-padding {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.bg-alt {
+  background-color: var(--color-fondo-alt);
+}
+
+/* Placeholders de header/footer — solo para referencia visual en este entregable */
+.vlm-header-placeholder,
+.vlm-footer-placeholder {
+  background-color: var(--color-fondo-alt);
+  border-bottom: 1px dashed #CBD5E1;
+  color: var(--color-texto-secundario);
+  font-size: 14px;
+}
+.vlm-footer-placeholder {
+  border-top: 1px dashed #CBD5E1;
+  border-bottom: none;
+}
+
+/* ============ TIPOGRAFÍA ============ */
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: var(--color-texto-secundario);
+  max-width: 540px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin-bottom: 14px;
+}
+
+.section-lead {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 0;
+}
+
+.card-title-vlm {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.card-text-vlm {
+  font-size: 16px;
+  color: var(--color-texto-secundario);
+  margin-bottom: 0;
+}
+
+/* ============ BOTONES ============ */
+
+.btn-primary-vlm {
+  background-color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary-vlm:hover {
+  background-color: #08396E;
+  border-color: #08396E;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-outline-vlm {
+  background-color: transparent;
+  border: 2px solid var(--color-primario);
+  color: var(--color-primario);
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-outline-vlm:hover {
+  background-color: var(--color-primario);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ============ HERO ============ */
+
+.hero-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: var(--color-fondo);
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .hero-title {
+    font-size: 34px;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(11, 78, 162, 0.08);
+  color: var(--color-primario);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.hero-img-wrap {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-stats {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 28px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.stat-label {
+  display: block;
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+}
+
+/* ============ CARDS GENERALES ============ */
+
+.vlm-card,
+.vlm-program-card,
+.vlm-activity-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vlm-card:hover,
+.vlm-program-card:hover,
+.vlm-activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+}
+
+.vlm-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(11, 78, 162, 0.08);
+  color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+/* ============ PROGRAMAS (Sección 3) ============ */
+
+.vlm-program-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-fondo);
+}
+
+.program-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background-color: rgba(47, 128, 237, 0.1);
+  color: var(--color-secundario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.program-link {
+  color: var(--color-primario);
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s ease;
+}
+
+.program-link:hover {
+  gap: 10px;
+  color: #08396E;
+}
+
+/* ============ ACTIVIDADES DESTACADAS (Sección 4) ============ */
+
+.activity-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-vlm {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(46, 125, 50, 0.1);
+  color: var(--color-positivo);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+.activity-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--color-texto-secundario);
+}
+
+.activity-meta i {
+  color: var(--color-primario);
+  width: 18px;
+  text-align: center;
+  margin-right: 6px;
+}
+
+/* ============ CÓMO PARTICIPAR (Sección 5) ============ */
+
+.steps-row {
+  position: relative;
+}
+
+.step-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
+.step-number {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-secundario);
+  margin-bottom: 8px;
+}
+
+/* ============ MAPA (Sección 6) ============ */
+
+.map-preview {
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+}
+
+.map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-note {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.map-note i {
+  margin-top: 2px;
+  color: var(--color-secundario);
+}
+
+/* ============ SECCIÓN FINAL ============ */
+
+.final-cta-section {
+  background-color: var(--color-primario);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+@media (max-width: 767.98px) {
+  .final-cta-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.final-cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.final-cta-text {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.final-cta-section .btn-light {
+  color: var(--color-primario);
+}
+
+/* ============ PLACEHOLDERS DE IMAGEN ============
+   Las imágenes reales (fotografías de jornadas de voluntariado) deben
+   colocarse en /img/ con el nombre indicado en cada <img src="...">.
+   Mientras no existan, se muestra un placeholder prolijo. */
+
+.img-placeholder {
+  position: relative;
+  background-color: #E2E8F0;
+}
+
+.img-placeholder img {
+  background-color: #E2E8F0;
+}
+
+.img-placeholder-label {
+  display: none;
+}
+
+.img-placeholder--fallback img {
+  display: none;
+}
+
+.img-placeholder--fallback .img-placeholder-label {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-texto-secundario);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 16px;
+}
+
+.img-placeholder--fallback .img-placeholder-label i {
+  font-size: 32px;
+  color: #94A3B8;
+}
+
+
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
