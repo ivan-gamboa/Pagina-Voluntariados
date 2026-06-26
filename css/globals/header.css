@@ -56,10 +56,6 @@
 .header-nav-list li:last-child {
     border-right: none;
 }
-.header-nav-list li a:hover{
-    color: var(--color-secundario);
-    transition: color 0.2s ease;
-}
 .header-user {
     display: flex;
     flex-direction: column;
@@ -69,6 +65,8 @@
 
 }
 .header-user-actions a:hover {
+    color: var(--color-principal);
+    transition: color 0.3s ease;
     font-size: 1.15rem;    
     transition: font-size 0.3s ease;
 }

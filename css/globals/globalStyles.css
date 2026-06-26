@@ -4,11 +4,15 @@ body {
     height: 100vh;
     font-size: 100%;
 }
+
 a {
     color: var(--color-texto);
     text-decoration: none;
 }
-
+a:hover{
+    color: var(--color-principal);
+    transition: color 0.2s ease;
+}
 :root {
     --color-texto: #f4f4f4;
     --color-fondo: #f4f4f4;
