@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/homePage.css">
     <link rel="stylesheet" href="../css/globals/header.css">
     <link rel="stylesheet" href="../css/globals/footer.css">
+    <link rel="stylesheet" href="../css/listaProgramas.css">
     <title>Voluntariados La Matanza</title>
 </head>
 
@@ -35,7 +36,7 @@
             <ul class="header-nav-list">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Proyectos</a></li>
+                <li><a href="programas.html">Proyectos</a></li>
                 <li><a href="#">Contactos</a></li>
             </ul>
         </nav>
@@ -79,7 +80,7 @@
             <a href="#inscripcion" class="btn btn-accent-vlm btn-lg rounded-4 px-4">
               Quiero ser voluntario
             </a>
-            <a href="#programas" class="btn btn-outline-vlm-on-photo btn-lg rounded-4 px-4">
+            <a href="programas.html" class="btn btn-outline-vlm-on-photo btn-lg rounded-4 px-4">
               Explorar programas
             </a>
           </div>
@@ -216,16 +217,16 @@
       </div>
  
       <div class="row g-4">
+        
         <div class="col-lg-4">
           <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
             <div class="ratio ratio-4x3 img-placeholder">
-              <!-- TODO: reemplazar por foto real de jornada de reforestación -->
               <img src="img/actividad-reforestacion.jpg"
                    alt="Jornada de reforestación urbana en San Justo" class="activity-img"
                    onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
               <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: reforestación</div>
             </div>
-            <div class="card-body p-4">
+            <div class="card-body p-4 d-flex flex-column">
               <span class="badge-vlm mb-2"><i class="bi bi-tree-fill"></i> Medio Ambiente</span>
               <h3 class="card-title-vlm">Reforestación Urbana</h3>
               <ul class="activity-meta list-unstyled mb-3">
@@ -233,7 +234,7 @@
                 <li><i class="bi bi-geo-alt"></i> San Justo</li>
                 <li><i class="bi bi-people"></i> 20 voluntarios</li>
               </ul>
-              <a href="#" class="btn btn-outline-vlm rounded-4 w-100">Ver detalles</a>
+              <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
             </div>
           </div>
         </div>
@@ -241,21 +242,22 @@
         <div class="col-lg-4">
           <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
             <div class="ratio ratio-4x3 img-placeholder">
-              <!-- TODO: reemplazar por foto real de comedor comunitario / jornada solidaria -->
               <img src="img/actividad-jornada-solidaria.jpg"
                    alt="Jornada solidaria de comedor comunitario en González Catán" class="activity-img"
                    onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
               <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: jornada solidaria</div>
             </div>
-            <div class="card-body p-4">
-              <span class="badge-vlm mb-2"><i class="bi bi-cup-hot-fill"></i> Comedores Comunitarios</span>
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge-vlm mb-2" style="background-color: rgba(20, 65, 123, 0.1); color: var(--color-primario);">
+                  <i class="bi bi-cup-hot-fill"></i> Comedores Comunitarios
+              </span>
               <h3 class="card-title-vlm">Jornada Solidaria</h3>
               <ul class="activity-meta list-unstyled mb-3">
                 <li><i class="bi bi-calendar3"></i> 27 de julio</li>
                 <li><i class="bi bi-geo-alt"></i> González Catán</li>
                 <li><i class="bi bi-people"></i> 15 voluntarios</li>
               </ul>
-              <a href="#" class="btn btn-outline-vlm rounded-4 w-100">Ver detalles</a>
+              <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
             </div>
           </div>
         </div>
@@ -263,24 +265,26 @@
         <div class="col-lg-4">
           <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
             <div class="ratio ratio-4x3 img-placeholder">
-              <!-- TODO: reemplazar por foto real de apoyo escolar -->
               <img src="img/actividad-apoyo-escolar.jpg"
                    alt="Apoyo escolar a estudiantes en Ramos Mejía" class="activity-img"
                    onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
               <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: apoyo escolar</div>
             </div>
-            <div class="card-body p-4">
-              <span class="badge-vlm mb-2"><i class="bi bi-book-fill"></i> Educación</span>
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="badge-vlm mb-2" style="background-color: rgba(47, 128, 237, 0.1); color: var(--color-secundario);">
+                  <i class="bi bi-book-fill"></i> Educación
+              </span>
               <h3 class="card-title-vlm">Apoyo Escolar</h3>
               <ul class="activity-meta list-unstyled mb-3">
                 <li><i class="bi bi-calendar3"></i> 3 de agosto</li>
                 <li><i class="bi bi-geo-alt"></i> Ramos Mejía</li>
                 <li><i class="bi bi-people"></i> 12 voluntarios</li>
               </ul>
-              <a href="#" class="btn btn-outline-vlm rounded-4 w-100">Ver detalles</a>
+              <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </section>
