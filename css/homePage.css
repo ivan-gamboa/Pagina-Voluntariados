@@ -443,20 +443,53 @@ a { text-decoration: none; }
   transform: scale(1.05);
 }
 
-/* Badge de categoría */
+/* Badge de categoría — base */
 .badge-vlm {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, rgba(46,125,50,0.12), rgba(0,164,189,0.10));
-  color: var(--color-verde);
-  border: 1px solid rgba(46,125,50,0.2);
   font-size: 12px;
   font-weight: 700;
   padding: 5px 14px;
   border-radius: 100px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+/* 🌳 Medio Ambiente → verde */
+.badge-vlm--ambiente {
+  background: rgba(46, 125, 50, 0.12);
+  color: #2e7d32;
+  border-color: rgba(46, 125, 50, 0.25);
+}
+
+/* ☕ Comedores Comunitarios → naranja */
+.badge-vlm--comedores {
+  background: rgba(237, 134, 52, 0.14);
+  color: #c96c10;
+  border-color: rgba(237, 134, 52, 0.3);
+}
+
+/* 📚 Educación → azul */
+.badge-vlm--educacion {
+  background: rgba(21, 101, 192, 0.12);
+  color: #1565c0;
+  border-color: rgba(21, 101, 192, 0.25);
+}
+
+/* ❤️ Protección Animal → rojo */
+.badge-vlm--animal {
+  background: rgba(198, 40, 40, 0.11);
+  color: #c62828;
+  border-color: rgba(198, 40, 40, 0.24);
+}
+
+/* 🟣 Adultos Mayores → violeta */
+.badge-vlm--mayores {
+  background: rgba(123, 31, 162, 0.11);
+  color: #7b1fa2;
+  border-color: rgba(123, 31, 162, 0.24);
 }
 
 .activity-meta {
