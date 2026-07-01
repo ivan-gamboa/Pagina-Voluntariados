@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../img/Logo Voluntariados.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado La Matanza | Municipio de La Matanza</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/globals/globalStyles.css">
+    <link rel="stylesheet" href="../css/homePage.css">
+    <link rel="stylesheet" href="../css/globals/header.css">
+    <link rel="stylesheet" href="../css/globals/footer.css">
+    <link rel="stylesheet" href="../css/listaProgramas.css">
+    <title>Voluntariados La Matanza</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo de Voluntariados">
+            <span class="header-logo-text">Voluntariados<h3>La Matanza</h3> </span>
+        </div>
+        <span class="nav-toggle"><i class="fa-solid fa-bars"></i></span>
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="programas.html">Proyectos</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </nav>
+        <div class="header-user">
+            <div class="header-user-actions">
+                <a href="#" class="login">Iniciar sesión</a>
+            </div>
+            <div class="header-user-actions">
+                <a href="#" class="signup">Registrarse</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section-padding bg-alt pb-5">
+            <div class="container text-center">
+                <span class="section-eyebrow">Voluntariados</span>
+                <h1 class="hero-title mb-3">Encontrá tu programa ideal</h1>
+                <p class="hero-text mx-auto">Filtrá por área de interés o ubicación y sumate a las próximas jornadas en La Matanza.</p>
+            </div>
+        </section>
+
+        <section class="filtros-section border-bottom">
+            <div class="container">
+                <form class="row g-3 justify-content-center" onsubmit="event.preventDefault();">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                            <input type="text" id="buscar-programa" class="form-control" placeholder="Buscar palabra clave...">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="filtro-categoria" class="form-select">
+                            <option value="todas" selected>Todas las categorías</option>
+                            <option value="medio ambiente">Medio Ambiente</option>
+                            <option value="educación">Educación</option>
+                            <option value="colecta solidaria">Colecta Solidaria</option>
+                            <option value="comedores comunitarios">Comedores Comunitarios</option>
+                            <option value="protección animal">Protección Animal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="filtro-localidad" class="form-select">
+                            <option value="todas" selected>Todas las localidades</option>
+                            <option value="san justo">San Justo</option>
+                            <option value="ramos mejía">Ramos Mejía</option>
+                            <option value="gregorio de laferrere">Gregorio de Laferrere</option>
+                            <option value="gonzález catán">González Catán</option>
+                            <option value="isidro casanova">Isidro Casanova</option>
+                            <option value="virrey del pino">Virrey del Pino</option>
+                            <option value="rafael castillo">Rafael Castillo</option>
+                            <option value="villa madero">Villa Madero</option>
+                            <option value="villa luzuriaga">Villa Luzuriaga</option>
+                            <option value="la tablada">La Tablada</option>
+                            <option value="ciudad evita">Ciudad Evita</option>
+                            <option value="lomas del mirador">Lomas del Mirador</option>
+                            <option value="villa celina">Villa Celina</option>
+                            <option value="aldo bonzi">Aldo Bonzi</option>
+                            <option value="tapiales">Tapiales</option>
+                            <option value="20 de junio">20 de Junio</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row g-4">
+                    
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-reforestacion.jpg" alt="Jornada de reforestación" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: reforestación</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2"><i class="bi bi-tree-fill"></i> Medio Ambiente</span>
+                                <h3 class="card-title-vlm">Reforestación Urbana</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 22 de julio</li>
+                                    <li><i class="bi bi-geo-alt"></i> San Justo</li>
+                                    <li><i class="bi bi-people"></i> 20 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Sumate a plantar árboles nativos en la Plaza San Martín para mejorar los espacios verdes del barrio.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-apoyo-escolar.jpg" alt="Apoyo Escolar" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: educación</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(47, 128, 237, 0.1); color: var(--color-secundario);">
+                                    <i class="bi bi-book-fill"></i> Educación
+                                </span>
+                                <h3 class="card-title-vlm">Apoyo Escolar Primario</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> Todos los sábados</li>
+                                    <li><i class="bi bi-geo-alt"></i> Ramos Mejía</li>
+                                    <li><i class="bi bi-people"></i> 10 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Ayudá a chicos de primaria con sus tareas en la sociedad de fomento local.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-donacion.jpg" alt="Donación de ropa" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-box-seam"></i> Foto: donación</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(237, 134, 52, 0.1); color: #ed8634;">
+                                    <i class="bi bi-box2-heart-fill"></i> Colecta Solidaria
+                                </span>
+                                <h3 class="card-title-vlm">Campaña de Abrigo</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> Hasta el 15 de Agosto</li>
+                                    <li><i class="bi bi-geo-alt"></i> Colegio San Justo</li>
+                                    <li><i class="bi bi-info-circle"></i> Se recibe ropa y calzado</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Sumate donando camperas, frazadas y calzado en buen estado para las familias que más lo necesitan este invierno.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-comedor.jpg" alt="Asistencia en comedor" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: comedor</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(20, 65, 123, 0.1); color: var(--color-primario);">
+                                    <i class="bi bi-cup-hot-fill"></i> Comedores Comunitarios
+                                </span>
+                                <h3 class="card-title-vlm">Asistencia en Comedor</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 5 de Agosto</li>
+                                    <li><i class="bi bi-geo-alt"></i> González Catán</li>
+                                    <li><i class="bi bi-people"></i> 15 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Colaborá en la preparación y distribución de viandas calientes para el almuerzo comunitario del fin de semana.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-mascotas.jpg" alt="Vacunación animal" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: mascotas</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(233, 30, 99, 0.1); color: #e91e63;">
+                                    <i class="bi bi-heart-fill"></i> Protección Animal
+                                </span>
+                                <h3 class="card-title-vlm">Campaña Antirrábica</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 12 de Agosto</li>
+                                    <li><i class="bi bi-geo-alt"></i> Gregorio de Laferrere</li>
+                                    <li><i class="bi bi-people"></i> 8 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Acompañá a los veterinarios municipales en la jornada gratuita de vacunación y desparasitación de perros y gatos.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-digital.jpg" alt="Taller digital" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: computadoras</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(47, 128, 237, 0.1); color: var(--color-secundario);">
+                                    <i class="bi bi-laptop"></i> Educación
+                                </span>
+                                <h3 class="card-title-vlm">Taller de Alfabetización</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> Lunes y Miércoles</li>
+                                    <li><i class="bi bi-geo-alt"></i> UNLaM, San Justo</li>
+                                    <li><i class="bi bi-people"></i> 5 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Ayudá a enseñar lo básico de HTML, CSS y navegación web a jóvenes que buscan sus primeras herramientas digitales.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-polideportivo.jpg" alt="Polideportivo" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: polideportivo</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2"><i class="bi bi-tools"></i> Medio Ambiente</span>
+                                <h3 class="card-title-vlm">Acondicionamiento de Club</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 19 de Agosto</li>
+                                    <li><i class="bi bi-geo-alt"></i> Isidro Casanova</li>
+                                    <li><i class="bi bi-people"></i> 12 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Jornada de pintura y puesta en valor del área de musculación y armado de rutinas recreativas para el polideportivo barrial.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-alimentos.jpg" alt="Colecta de alimentos" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: cajas de donación</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(237, 134, 52, 0.1); color: #ed8634;">
+                                    <i class="bi bi-box2-heart-fill"></i> Colecta Solidaria
+                                </span>
+                                <h3 class="card-title-vlm">Clasificación de Donaciones</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 26 de Agosto</li>
+                                    <li><i class="bi bi-geo-alt"></i> Villa Celina</li>
+                                    <li><i class="bi bi-people"></i> 15 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Sumate a recibir, organizar y empaquetar alimentos no perecederos en el centro comunitario de la zona.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-limpieza.jpg" alt="Limpieza de espacio público" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: limpieza urbana</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2"><i class="bi bi-trash-fill"></i> Medio Ambiente</span>
+                                <h3 class="card-title-vlm">Limpieza de Arroyos</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 2 de Septiembre</li>
+                                    <li><i class="bi bi-geo-alt"></i> Virrey del Pino</li>
+                                    <li><i class="bi bi-people"></i> 30 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Participá en la cuadrilla municipal de limpieza de márgenes para prevenir inundaciones y cuidar la flora local.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-salud.jpg" alt="Campaña de donación de sangre" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: salud</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(220, 53, 69, 0.1); color: #dc3545;">
+                                    <i class="bi bi-heart-pulse-fill"></i> Salud y Prevención
+                                </span>
+                                <h3 class="card-title-vlm">Donación de Sangre</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 9 de Septiembre</li>
+                                    <li><i class="bi bi-geo-alt"></i> Tapiales</li>
+                                    <li><i class="bi bi-people"></i> 25 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Sumate como donante o ayudá en la logística y recepción de vecinos durante la jornada solidaria junto al hospital zonal.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 tarjeta-programa-wrapper">
+                        <div class="card vlm-activity-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="ratio ratio-4x3 img-placeholder">
+                                <img src="../img/actividad-reparacion.jpg" alt="Reparación de juguetes" class="activity-img" onerror="this.closest('.img-placeholder').classList.add('img-placeholder--fallback')">
+                                <div class="img-placeholder-label"><i class="bi bi-image"></i> Foto: taller</div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge-vlm mb-2" style="background-color: rgba(237, 134, 52, 0.1); color: #ed8634;">
+                                    <i class="bi bi-box2-heart-fill"></i> Colecta Solidaria
+                                </span>
+                                <h3 class="card-title-vlm">Taller de Juguetes</h3>
+                                <ul class="activity-meta list-unstyled mb-3">
+                                    <li><i class="bi bi-calendar3"></i> 16 de Septiembre</li>
+                                    <li><i class="bi bi-geo-alt"></i> Aldo Bonzi</li>
+                                    <li><i class="bi bi-people"></i> 10 voluntarios requeridos</li>
+                                </ul>
+                                <p class="card-text-vlm mb-4">Ayudanos a clasificar, limpiar y reparar juguetes donados que serán entregados en merenderos por el Día de la Niñez.</p>
+                                <a href="detalle-programa.html" class="btn btn-outline-vlm rounded-4 w-100 mt-auto">Ver detalles completos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+            <div class="footer-links">
+                <a href="#">Inicio</a>
+                <a href="#">Acerca de</a>
+                <a href="#">Proyectos</a>
+                <a href="#">Contactos</a>
+            </div>
+            <div class="footer-contacto">
+                <div class="footer-contacto-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a></div>
+                <div class="footer-contacto-info">
+                    <p>Contacto:
+                        <br>Teléfono: +54 11 XXXX-XXXX
+                        <br>Email: info@voluntariadoslamatanza.org
+                    </p>
+                </div>
+            </div>
+    </footer>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('buscar-programa');
+        const categorySelect = document.getElementById('filtro-categoria');
+        const locationSelect = document.getElementById('filtro-localidad');
+        const cards = document.querySelectorAll('.tarjeta-programa-wrapper');
+
+        function filtrarProgramas() {
+            const textoBuscado = searchInput.value.toLowerCase();
+            const categoriaBuscada = categorySelect.value.toLowerCase();
+            const localidadBuscada = locationSelect.value.toLowerCase();
+
+            cards.forEach(card => {
+                // Obtenemos el título, categoría y localidad de cada tarjeta
+                const titulo = card.querySelector('.card-title-vlm').innerText.toLowerCase();
+                const categoriaTarjeta = card.querySelector('.badge-vlm').innerText.toLowerCase();
+                const localidadTarjeta = card.querySelector('.activity-meta').innerText.toLowerCase();
+                
+                // Verificamos si coinciden
+                const coincideTexto = titulo.includes(textoBuscado);
+                const coincideCategoria = categoriaBuscada === 'todas' || categoriaTarjeta.includes(categoriaBuscada);
+                const coincideLocalidad = localidadBuscada === 'todas' || localidadTarjeta.includes(localidadBuscada);
+
+                // Mostramos u ocultamos la tarjeta
+                if (coincideTexto && coincideCategoria && coincideLocalidad) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Ejecutar el filtro cuando se escribe o se cambia la opción
+        searchInput.addEventListener('keyup', filtrarProgramas);
+        categorySelect.addEventListener('change', filtrarProgramas);
+        locationSelect.addEventListener('change', filtrarProgramas);
+
+        filtrarProgramas();
+    });
+</script>
+
+</html>
