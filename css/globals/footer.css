@@ -1,0 +1,8 @@
+.footer {
+    background: linear-gradient(to right, var(--color-terciarioDegradado), var(--color-secundario));
+    color: var(--color-texto);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
