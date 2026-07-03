@@ -1,7 +1,7 @@
 :root {
   --azul-institucional: #0B3D6B;
   --azul-oscuro: #082C4D;
-  --celeste: #3E8ED0;
+  --celeste: #00a4bd;
   --celeste-claro: #EAF3FB;
   --naranja: #F5821F;
   --naranja-oscuro: #D96C0D;
@@ -16,6 +16,9 @@
 }
 body {
   background-color: linear-gradient(135deg, #214F90, #1A447A);
+}
+i {
+  color: var(--azul-institucional);
 }
 .vlm-main {
   width: 88%;
@@ -160,7 +163,6 @@ body {
 }
 
 .zona-card {
-  background: var(--blanco);
   border-radius: var(--radio-md);
   box-shadow: var(--sombra-suave);
   padding: 24px;
@@ -177,7 +179,7 @@ body {
 
 .zona-header {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin-bottom: 10px;
   gap: 8px;
@@ -205,20 +207,20 @@ body {
 
 .zona-button {
   align-self: flex-start;
-  background: var(--celeste-claro);
-  color: var(--azul-institucional);
+  background: var(--celeste);
+  color: var(--blanco);
   border: 2px solid var(--celeste);
   padding: 9px 20px;
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: var(--radio-sm);
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .zona-button:hover {
-  background: var(--azul-institucional);
-  border-color: var(--azul-institucional);
+  background: var(--naranja);
+  border-color: var(--naranja);
   color: var(--blanco);
 }
 .donar-grid {
@@ -232,8 +234,7 @@ body {
   border-radius: var(--radio-md);
   padding: 28px 20px;
   text-align: center;
-  border-top: 4px solid var(--celeste);
-  border-bottom: 4px solid var(--celeste);
+  border-top: 4px solid var(--naranja);
 }
 
 .donar-icon {
