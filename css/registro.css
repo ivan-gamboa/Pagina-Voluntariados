@@ -1,0 +1,112 @@
+main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    background: linear-gradient(
+        135deg,
+        var(--color-principal),
+        var(--color-terciario)
+    );
+}
+
+.registro-section{
+    width: 100%;
+    max-width: 30em;
+    background-color: #ffffff;
+    padding: 2.5em;
+    border-radius: 1em;
+    box-shadow: 0 .5em 1.5em rgba(0,0,0,.2);
+    text-align: center;
+    margin: .5em 0;
+}
+
+.registro-section h1{
+    color: var(--color-principal);
+    font-size: 2em;
+    margin-bottom: 1.5em;
+}
+
+.registro-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.registro-form input{
+    width: 100%;
+    padding: .9em 1em;
+    border: .1em solid #d8d8d8;
+    border-radius: .6em;
+    font-size: 1em;
+    font-family: inherit;
+    color: #333;
+    transition: .2s ease;
+    box-sizing: border-box;
+}
+
+.registro-form input:focus{
+    outline: none;
+    border-color: var(--color-terciario);
+    box-shadow: 0 0 0 .1em var(--color-terciarioDegradado);
+}
+
+.registro-form button{
+    margin-top: .5em;
+    padding: .9em;
+    border: none;
+    border-radius: .6em;
+    background-color: var(--color-principal);
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.registro-form button:hover{
+    background-color: var(--color-secundario);
+    transform: translateY(-.1em);
+}
+
+.registro-section p{
+    margin-top: 1.5em;
+    color: #555;
+}
+
+.registro-section p a{
+    color: var(--color-principal);
+    font-weight: 600;
+}
+
+.registro-section p a:hover{
+    color: var(--color-secundario);
+}
+
+.registro-section > a{
+    display: inline-block;
+    margin-top: 1.5em;
+    color: var(--color-principal);
+    font-weight: 600;
+}
+
+.registro-section > a:hover{
+    color: var(--color-secundario);
+}
+
+@media (max-width: 480px){
+    .registro-section{
+        padding: 2em 1.5em;
+    }
+
+    .registro-section h1{
+        font-size: 1.8em;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .registro-section{
+        max-width: 26em;
+    }
+}
