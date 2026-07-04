@@ -12,7 +12,7 @@
   --sombra-hover: 0 12px 32px rgba(11, 61, 107, 0.16);
   --radio-lg: 20px;
   --radio-md: 14px;
-  --radio-sm: 10px;
+  --radio-sm: 7px;
 }
 body {
   background-color: linear-gradient(135deg, #214F90, #1A447A);
@@ -25,7 +25,7 @@ i {
   max-width: 1280px;
   margin: 0 auto;
   padding: 48px 0 80px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Helvetica";
   color: var(--gris-texto);
 }
 
@@ -61,15 +61,14 @@ i {
 
 .stat-card {
   background: var(--blanco);
-  border-radius: var(--radio-md);
+  border-radius: var(--radio-sm);
   box-shadow: var(--sombra-suave);
   padding: 28px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-top: 4px solid var(--celeste);
-  border-bottom: 4px solid var(--celeste);
+  border-top: 3px solid var(--celeste);
 }
 
 .stat-icon {
