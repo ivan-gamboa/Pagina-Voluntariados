@@ -1,0 +1,114 @@
+main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    background: linear-gradient(
+        135deg,
+        var(--color-principal),
+        var(--color-terciario)
+    );
+}
+
+.login-container{
+    width: 100%;
+    max-width: 28em;
+    background-color: #ffffff;
+    padding: 2.5em;
+    border-radius: 1em;
+    box-shadow: 0 0.5em 1.5em rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.login-container h1{
+    margin-bottom: 1.5em;
+    color: var(--color-principal);
+    font-size: 2em;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.login-input{
+    width: 100%;
+    padding: .9em 1em;
+    border: .1em solid #d8d8d8;
+    border-radius: .6em;
+    font-size: 1em;
+    font-family: inherit;
+    color: #333;
+    transition: .2s ease;
+    box-sizing: border-box;
+}
+
+.login-input:focus{
+    outline: none;
+    border-color: var(--color-terciario);
+    box-shadow: 0 0 0 .1em var(--color-terciarioDegradado);
+}
+
+.login-button{
+    padding: .9em;
+    border: none;
+    border-radius: .6em;
+    background-color: var(--color-principal);
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.login-button:hover{
+    background-color: var(--color-secundario);
+    transform: translateY(-0.1em);
+}
+
+.login-container p{
+    margin-top: 1.2em;
+    color: #555;
+}
+
+.login-container p a{
+    color: var(--color-principal);
+    font-weight: 600;
+}
+
+.login-container p a:hover{
+    color: var(--color-secundario);
+}
+
+.login-container > a{
+    display: inline-block;
+    margin-top: 1.5em;
+    color: var(--color-principal);
+    font-weight: 600;
+}
+
+.login-container > a:hover{
+    color: var(--color-secundario);
+}
+
+@media (max-width: 480px){
+
+    .login-container{
+        padding: 2em 1.5em;
+    }
+
+    .login-container h1{
+        font-size: 1.8em;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+
+    .login-container{
+        max-width: 24em;
+    }
+
+}

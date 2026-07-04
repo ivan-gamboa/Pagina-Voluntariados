@@ -1,0 +1,186 @@
+main {
+  background-color: var(--color-fondo);
+  padding: 2.5em 2em;
+}
+
+.detalle-perfil {
+  max-width: 70em;
+  margin: 0 auto;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 2.5em;
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.12);
+  margin-bottom: 2em;
+}
+
+.imagen-de-perfil img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nombre-y-año {
+  flex: 1;
+}
+
+.nombre-y-año h1 {
+  color: var(--color-principal);
+  margin-bottom: 0.3em;
+  font-size: 2em;
+}
+
+.nombre-y-año p {
+  color: #666;
+}
+
+.perfil-acciones {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+}
+
+.btn-editar-perfil {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.8em 1.4em;
+  background-color: var(--color-principal);
+  color: #fff;
+  border-radius: 0.6em;
+  font-weight: 600;
+  transition: 0.2s ease;
+  box-shadow: 0 0.2em 0.8em rgba(0, 0, 0, 0.15);
+}
+
+.btn-editar-perfil:hover {
+  background-color: var(--color-secundario);
+  color: #fff;
+  transform: translateY(-0.1em);
+}
+
+.informacion-personal {
+  min-width: 18em;
+}
+
+.informacion-personal h2 {
+  color: var(--color-principal);
+  margin-bottom: 1em;
+}
+
+.informacion-personal p {
+  color: #444;
+  margin-bottom: 0.6em;
+}
+
+.informacion-perfil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.informacion-aptitudes,
+.informacion-voluntariado {
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.12);
+}
+
+.informacion-aptitudes h2,
+.informacion-voluntariado h2 {
+  color: var(--color-principal);
+  margin-bottom: 1em;
+}
+
+.aptitud {
+  margin-bottom: 2em;
+}
+
+.aptitud:last-child {
+  margin-bottom: 0;
+}
+
+.aptitud ul {
+  padding-left: 1.5em;
+}
+
+.aptitud li {
+  color: #444;
+  margin-bottom: 0.5em;
+}
+
+.proyecto {
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-left: 0.35em solid var(--color-secundario);
+  background-color: rgba(0, 164, 189, 0.05);
+  border-radius: 0.5em;
+}
+
+.proyecto:last-child {
+  margin-bottom: 0;
+}
+
+.proyecto h3 {
+  color: var(--color-principal);
+  margin-bottom: 0.5em;
+}
+
+.proyecto p {
+  color: #444;
+  margin-bottom: 0.4em;
+}
+
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .informacion-personal {
+    min-width: 100%;
+  }
+
+  .informacion-perfil {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    .perfil-acciones {
+      justify-content: center;
+    }
+
+    .btn-editar-perfil {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 2em 1em;
+  }
+
+  .perfil-header,
+  .informacion-aptitudes,
+  .informacion-voluntariado {
+    padding: 1.5em;
+  }
+
+  .imagen-de-perfil img {
+    width: 8em;
+    height: 8em;
+  }
+
+  .nombre-y-año h1 {
+    font-size: 1.8em;
+  }
+}
