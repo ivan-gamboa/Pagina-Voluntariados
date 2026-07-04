@@ -3,7 +3,8 @@
     box-sizing: border-box;
 }
 .header {
-    background: linear-gradient(to right, var(--color-terciarioDegradado), var(--color-secundario));
+    background: url('/img/header-2025.jpg') no-repeat center center;
+    background-size: cover;
     color: var(--color-texto);
     padding: 0.5em 1em;
     display: flex;
@@ -11,6 +12,7 @@
     align-items: center;
     height: 6.25em;
     font-weight: bold;
+    
 }
 .header-logo {
     font-size: 1.5rem;
@@ -56,10 +58,6 @@
 .header-nav-list li:last-child {
     border-right: none;
 }
-.header-nav-list li a:hover{
-    color: var(--color-secundario);
-    transition: color 0.2s ease;
-}
 .header-user {
     display: flex;
     flex-direction: column;
@@ -69,6 +67,8 @@
 
 }
 .header-user-actions a:hover {
+    color: var(--color-principal);
+    transition: color 0.3s ease;
     font-size: 1.15rem;    
     transition: font-size 0.3s ease;
 }
