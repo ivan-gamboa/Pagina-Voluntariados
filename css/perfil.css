@@ -1,139 +1,156 @@
-body{
-    background:#f5f5f5;
-    font-family:Arial, Helvetica, sans-serif;
+main{
+    background-color: var(--color-fondo);
+    padding: 3em 2em;
 }
 
 .detalle-perfil{
-    max-width:68.75em;     
-    margin:2.5em auto;   
-    padding:1.25em;        
+    max-width: 70em;
+    margin: 0 auto;
 }
 
 .perfil-header{
-    background:rgb(126, 170, 201);
-    border-radius:0.9em;  
-    display:flex;
-    align-items:center;
-    gap:2.5em;              
-    padding:1.88em;        
-    box-shadow:0 0.31em 0.94em #0909091a;
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 .5em 1.5em rgba(0,0,0,.12);
+    margin-bottom: 2em;
 }
 
 .imagen-de-perfil img{
-    width:10.6em;        
-    height: auto;
-    border-radius:50%;
-    object-fit:cover;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    object-fit: cover;
+   
 }
 
 .nombre-y-año{
-    flex:1;
+    flex: 1;
 }
 
 .nombre-y-año h1{
-    margin-bottom:0.63em; 
-    color:#f8f8f8;
+    color: var(--color-principal);
+    margin-bottom: .3em;
+    font-size: 2em;
 }
 
 .nombre-y-año p{
-    color:#d9d9d9;
+    color: #666;
 }
 
 .informacion-personal{
-    min-width:17.5em;     
+    min-width: 18em;
 }
 
 .informacion-personal h2{
-    margin-bottom:0.94em; 
+    color: var(--color-principal);
+    margin-bottom: 1em;
 }
 
 .informacion-personal p{
-    margin-bottom:0.5em; 
+    color: #444;
+    margin-bottom: .6em;
 }
 
 .informacion-perfil{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1.56em;            
-    margin-top:1.88em;     
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
 }
 
 .informacion-aptitudes,
 .informacion-voluntariado{
-    background:rgb(240, 255, 254);
-    border-radius:0.9em;
-    padding:1.56em;
-    box-shadow:0 0.31em 0.94em rgba(0,0,0,.1);
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 1em;
+    box-shadow: 0 .5em 1.5em rgba(0,0,0,.12);
+}
+
+.informacion-aptitudes h2,
+.informacion-voluntariado h2{
+    color: var(--color-principal);
+    margin-bottom: 1em;
 }
 
 .aptitud{
-    margin-bottom:1.88em;
+    margin-bottom: 2em;
 }
 
 .aptitud:last-child{
-    margin-bottom:0;
-}
-
-.aptitud h2{
-    margin-bottom:0.63em;
-    font-weight: 800;
-    color:#ff922c
+    margin-bottom: 0;
 }
 
 .aptitud ul{
-    padding-left:1.25em;
+    padding-left: 1.5em;
 }
 
 .aptitud li{
-    margin-bottom:0.5em;
-    color: #00052e;
-    font-weight: 600;
-}
-
-.informacion-voluntariado h2{
-    margin-bottom:0.6em;
-    font-weight: 800;
-    color:#ff922c
-}
-
-.informacion-voluntariado p{
-    color: #00052e;
-    font-weight: 500;
+    color: #444;
+    margin-bottom: .5em;
 }
 
 .proyecto{
-    border-left:0.31em solid #2E7D32;
-    padding-left:0.94em;
-    margin-bottom:1.56em;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    border-left: .35em solid var(--color-secundario);
+    background-color: rgba(0,164,189,.05);
+    border-radius: .5em;
 }
 
 .proyecto:last-child{
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
 .proyecto h3{
-    margin-bottom:0.6em;
-    color:#2E7D32;
-    font-weight: 700;
+    color: var(--color-principal);
+    margin-bottom: .5em;
 }
 
 .proyecto p{
-    margin-bottom:0.38em;
+    color: #444;
+    margin-bottom: .4em;
 }
 
-@media (max-width:56.25em){ 
+
+@media (max-width: 768px){
 
     .perfil-header{
-        flex-direction:column;
-        text-align:center;
+        flex-direction: column;
+        text-align: center;
     }
 
     .informacion-personal{
-        width:100%;
+        min-width: 100%;
     }
 
     .informacion-perfil{
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    main{
+        padding: 2em 1em;
+    }
+
+    .perfil-header,
+    .informacion-aptitudes,
+    .informacion-voluntariado{
+        padding: 1.5em;
+    }
+
+    .imagen-de-perfil img{
+        width: 8em;
+        height: 8em;
+    }
+
+    .nombre-y-año h1{
+        font-size: 1.8em;
     }
 
 }
