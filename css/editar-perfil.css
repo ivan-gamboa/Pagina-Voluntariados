@@ -1,0 +1,356 @@
+/* =====================================================
+   editar-perfil.css — Página de edición de perfil
+   Voluntariados La Matanza
+   ===================================================== */
+
+main {
+  background-color: var(--color-fondo);
+  padding: 2.5em 2em;
+  min-height: 60vh;
+}
+
+/* ── Contenedor principal ── */
+.editar-perfil-container {
+  max-width: 56em;
+  margin: 0 auto;
+}
+
+/* ── Encabezado de página ── */
+.editar-perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.editar-perfil-header a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--color-principal);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: gap 0.2s ease;
+}
+
+.editar-perfil-header a:hover {
+  gap: 0.7em;
+  color: var(--color-secundario);
+}
+
+.editar-perfil-header h1 {
+  color: var(--color-principal);
+  font-size: 1.8em;
+  margin: 0;
+}
+
+/* ── Tarjeta de sección ── */
+.edit-card {
+  background: #ffffff;
+  border-radius: 1em;
+  box-shadow: 0 0.4em 1.4em rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin-bottom: 1.8em;
+}
+
+.edit-card h2 {
+  color: var(--color-principal);
+  font-size: 1.15em;
+  margin-bottom: 1.4em;
+  padding-bottom: 0.6em;
+  border-bottom: 2px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.edit-card h2 i {
+  color: var(--color-secundario);
+}
+
+/* ── Grilla de campos ── */
+.fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2em;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+/* ── Grupo de campo ── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.field-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 0.02em;
+}
+
+.field-group input,
+.field-group textarea {
+  padding: 0.75em 1em;
+  border: 1.5px solid #dde1e8;
+  border-radius: 0.55em;
+  font-size: 0.95rem;
+  color: #222;
+  background: #fafbfc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  resize: none;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  outline: none;
+  border-color: var(--color-terciario);
+  box-shadow: 0 0 0 3px rgba(0, 164, 189, 0.15);
+  background: #fff;
+}
+
+/* ── Sección de tags (cualidades / habilidades) ── */
+.tags-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.tags-editor label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  min-height: 2.8em;
+  padding: 0.6em;
+  border: 1.5px dashed #dde1e8;
+  border-radius: 0.55em;
+  background: #fafbfc;
+}
+
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.35em 0.8em;
+  background: linear-gradient(135deg, var(--color-principal), #1e5aa0);
+  color: #fff;
+  border-radius: 2em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  animation: tagIn 0.2s ease;
+}
+
+@keyframes tagIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.tag-item button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.tag-item button:hover {
+  color: #fff;
+}
+
+.tag-add-row {
+  display: flex;
+  gap: 0.6em;
+}
+
+.tag-add-row input {
+  flex: 1;
+  padding: 0.65em 1em;
+  border: 1.5px solid #dde1e8;
+  border-radius: 0.55em;
+  font-size: 0.9rem;
+  background: #fafbfc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.tag-add-row input:focus {
+  outline: none;
+  border-color: var(--color-terciario);
+  box-shadow: 0 0 0 3px rgba(0, 164, 189, 0.15);
+}
+
+.btn-add-tag {
+  padding: 0.65em 1.2em;
+  background: var(--color-terciario);
+  color: #fff;
+  border: none;
+  border-radius: 0.55em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  transition: background 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-add-tag:hover {
+  background: #0090a8;
+  transform: translateY(-1px);
+}
+
+/* ── Proyectos de voluntariado ── */
+.proyecto-edit {
+  padding: 1.2em;
+  border-left: 4px solid var(--color-secundario);
+  background: rgba(237, 134, 52, 0.05);
+  border-radius: 0.5em;
+  margin-bottom: 1.2em;
+}
+
+.proyecto-edit:last-child {
+  margin-bottom: 0;
+}
+
+.proyecto-edit h3 {
+  color: var(--color-principal);
+  margin-bottom: 0.8em;
+  font-size: 1em;
+}
+
+.proyecto-edit .fields-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Botones de acción ── */
+.acciones-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-top: 0.5em;
+  padding-top: 1.5em;
+  border-top: 2px solid #f0f0f0;
+}
+
+.btn-cancelar {
+  padding: 0.85em 2em;
+  border: 2px solid #dde1e8;
+  border-radius: 0.6em;
+  background: transparent;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.btn-cancelar:hover {
+  border-color: #aaa;
+  color: #222;
+  background: #f5f5f5;
+}
+
+.btn-guardar {
+  padding: 0.85em 2.2em;
+  background: linear-gradient(135deg, var(--color-principal), #1e5aa0);
+  color: #fff;
+  border: none;
+  border-radius: 0.6em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: all 0.2s ease;
+  box-shadow: 0 0.3em 1em rgba(20, 65, 123, 0.3);
+  font-family: inherit;
+}
+
+.btn-guardar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5em 1.4em rgba(20, 65, 123, 0.4);
+}
+
+.btn-guardar:active {
+  transform: translateY(0);
+}
+
+/* ── Toast de éxito ── */
+.toast-success {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  background: linear-gradient(135deg, #14417b, #1e5aa0);
+  color: #fff;
+  padding: 1em 1.6em;
+  border-radius: 0.8em;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  box-shadow: 0 0.5em 1.5em rgba(0,0,0,0.25);
+  transform: translateY(5em);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast-success.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .proyecto-edit .fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .acciones-footer {
+    flex-direction: column-reverse;
+  }
+  .btn-cancelar,
+  .btn-guardar {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1.5em 1em;
+  }
+  .edit-card {
+    padding: 1.4em;
+  }
+  .editar-perfil-header h1 {
+    font-size: 1.4em;
+  }
+}

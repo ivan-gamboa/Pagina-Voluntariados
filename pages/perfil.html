@@ -49,7 +49,7 @@
     <main>
       <section class="detalle-perfil">
         <div class="perfil-acciones">
-    <a href="#" class="btn-editar-perfil">
+    <a href="./editar-perfil.html" class="btn-editar-perfil" id="btn-editar-perfil">
         <i class="fa-solid fa-pen"></i>
         Editar perfil
     </a>
@@ -82,8 +82,7 @@
           <div class="informacion-aptitudes">
             <div class="aptitud">
               <h2>Cualidades</h2>
-
-              <ul>
+              <ul id="lista-cualidades">
                 <li>Empatía</li>
                 <li>Creatividad</li>
                 <li>Compromiso</li>
@@ -93,8 +92,7 @@
 
             <div class="aptitud">
               <h2>Habilidades</h2>
-
-              <ul>
+              <ul id="lista-habilidades">
                 <li>Matemática básica</li>
                 <li>Cocina</li>
                 <li>Fútbol</li>
@@ -105,27 +103,17 @@
 
           <div class="informacion-voluntariado">
             <h2>Información de Voluntariado</h2>
-
-            <div class="proyecto">
-              <h3>Apoyo Escolar</h3>
-
-              <p>
-                <strong>Descripción:</strong> Ayudar a estudiantes en necesidad
-                con su aprendizaje académico.
-              </p>
-
-              <p><strong>Horas aportadas:</strong> 50 horas</p>
-            </div>
-
-            <div class="proyecto">
-              <h3>Cocinero en comedor comunitario</h3>
-
-              <p>
-                <strong>Descripción:</strong> Preparar y servir comidas a
-                personas en situación de vulnerabilidad.
-              </p>
-
-              <p><strong>Horas aportadas:</strong> 20 horas</p>
+            <div id="lista-proyectos">
+              <div class="proyecto">
+                <h3>Apoyo Escolar</h3>
+                <p><strong>Descripción:</strong> Ayudar a estudiantes en necesidad con su aprendizaje académico.</p>
+                <p><strong>Horas aportadas:</strong> 50 horas</p>
+              </div>
+              <div class="proyecto">
+                <h3>Cocinero en comedor comunitario</h3>
+                <p><strong>Descripción:</strong> Preparar y servir comidas a personas en situación de vulnerabilidad.</p>
+                <p><strong>Horas aportadas:</strong> 20 horas</p>
+              </div>
             </div>
           </div>
         </div>
@@ -164,25 +152,74 @@
   </body>
 
   <script>
-    // Redirigir al login si no hay sesión activa
+    /* ── Utilidad para leer cookies ── */
+    function getCookie(name) {
+      const prefix = name + '=';
+      const cookies = document.cookie.split(';');
+      for (let c of cookies) {
+        c = c.trim();
+        if (c.startsWith(prefix)) {
+          try { return JSON.parse(decodeURIComponent(c.substring(prefix.length))); }
+          catch { return null; }
+        }
+      }
+      return null;
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+      /* Protección: redirigir si no hay sesión activa */
       const sesion = obtenerSesion();
       if (!sesion) {
         window.location.href = './login.html';
         return;
       }
-      // Mostrar nombre del usuario logueado
+
+      /* Clave única por usuario */
+      const claveUsuario = 'perfil_' + btoa(sesion.email).replace(/=/g,'');
+      const datos = getCookie(claveUsuario);
+
+      /* ── Nombre ── */
       const nombreEl = document.getElementById('perfil-nombre');
-      if (nombreEl && sesion.nombre) {
-        nombreEl.textContent = sesion.nombre + ' ' + (sesion.apellido || '');
-      }
-      // Actualizar el email en información personal
-      const emailEls = document.querySelectorAll('.informacion-personal p');
-      emailEls.forEach(el => {
-        if (el.innerHTML.includes('Email:')) {
-          el.innerHTML = '<strong>Email:</strong> ' + sesion.email;
-        }
+      const nombre   = (datos?.nombre   || sesion.nombre   || '').trim();
+      const apellido = (datos?.apellido || sesion.apellido || '').trim();
+      if (nombreEl) nombreEl.textContent = (nombre + ' ' + apellido).trim() || 'Sin nombre';
+
+      /* ── Información personal ── */
+      const infoPs = document.querySelectorAll('.informacion-personal p');
+      infoPs.forEach(p => {
+        if (p.innerHTML.includes('Email:'))     p.innerHTML = '<strong>Email:</strong> '    + sesion.email;
+        if (p.innerHTML.includes('Edad:'))      p.innerHTML = '<strong>Edad:</strong> '     + (datos?.edad     ? datos.edad + ' años' : 'No especificada');
+        if (p.innerHTML.includes('Teléfono:'))  p.innerHTML = '<strong>Teléfono:</strong> ' + (datos?.telefono || 'No especificado');
       });
+
+      /* ── Cualidades ── */
+      const listaCualidades = document.getElementById('lista-cualidades');
+      const cualidades = datos?.cualidades || ['Empatía','Creatividad','Compromiso','Trabajo en equipo'];
+      if (listaCualidades) {
+        listaCualidades.innerHTML = cualidades.map(c => `<li>${c}</li>`).join('');
+      }
+
+      /* ── Habilidades ── */
+      const listaHabilidades = document.getElementById('lista-habilidades');
+      const habilidades = datos?.habilidades || ['Matemática básica','Cocina','Fútbol','Inglés avanzado'];
+      if (listaHabilidades) {
+        listaHabilidades.innerHTML = habilidades.map(h => `<li>${h}</li>`).join('');
+      }
+
+      /* ── Proyectos ── */
+      const listaProyectos = document.getElementById('lista-proyectos');
+      const proyectos = datos?.proyectos || [
+        { nombre: 'Apoyo Escolar', descripcion: 'Ayudar a estudiantes en necesidad con su aprendizaje académico.', horas: 50 },
+        { nombre: 'Cocinero en comedor comunitario', descripcion: 'Preparar y servir comidas a personas en situación de vulnerabilidad.', horas: 20 }
+      ];
+      if (listaProyectos && proyectos.length > 0) {
+        listaProyectos.innerHTML = proyectos.map(p => `
+          <div class="proyecto">
+            <h3>${p.nombre || 'Sin título'}</h3>
+            <p><strong>Descripción:</strong> ${p.descripcion || '—'}</p>
+            <p><strong>Horas aportadas:</strong> ${p.horas || 0} horas</p>
+          </div>`).join('');
+      }
     });
   </script>
 </html>

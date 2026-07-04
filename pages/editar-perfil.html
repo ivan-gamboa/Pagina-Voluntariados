@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/Logo Voluntariados.png" type="image/png">
+    <meta name="description" content="Editá tu información personal, cualidades y habilidades en Voluntariados La Matanza.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/globals/globalStyles.css">
+    <link rel="stylesheet" href="../css/globals/header.css">
+    <link rel="stylesheet" href="../css/globals/footer.css">
+    <link rel="stylesheet" href="../css/editar-perfil.css">
+    <script src="../js/auth.js" defer></script>
+    <title>Editar Perfil | Voluntariados La Matanza</title>
+</head>
+<body>
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header class="header">
+        <div class="header-logo">
+            <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo de Voluntariados">
+            <span class="header-logo-text">Voluntariados<h3>La Matanza</h3></span>
+        </div>
+        <span class="nav-toggle"><i class="fa-solid fa-bars"></i></span>
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./map.html">Mapa</a></li>
+                <li><a href="./programas.html">Proyectos</a></li>
+            </ul>
+        </nav>
+        <div class="header-user">
+            <!-- auth.js rellena esto dinámicamente -->
+            <div class="header-user-actions">
+                <a href="./perfil.html" class="login">Mi Perfil</a>
+            </div>
+            <div class="header-user-actions">
+                <a href="#" class="signup" onclick="logout(); return false;">Cerrar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ══════════════ MAIN ══════════════ -->
+    <main>
+        <div class="editar-perfil-container">
+
+            <!-- Encabezado -->
+            <div class="editar-perfil-header">
+                <a href="./perfil.html" id="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al perfil
+                </a>
+                <h1><i class="fa-solid fa-pen-to-square" style="color:var(--color-secundario);margin-right:0.3em;"></i>Editar Perfil</h1>
+            </div>
+
+            <form id="form-editar-perfil" novalidate>
+
+                <!-- ── Información Personal ── -->
+                <div class="edit-card">
+                    <h2><i class="fa-solid fa-user"></i> Información Personal</h2>
+                    <div class="fields-grid">
+                        <div class="field-group">
+                            <label for="edit-nombre">Nombre</label>
+                            <input type="text" id="edit-nombre" placeholder="Tu nombre" maxlength="50">
+                        </div>
+                        <div class="field-group">
+                            <label for="edit-apellido">Apellido</label>
+                            <input type="text" id="edit-apellido" placeholder="Tu apellido" maxlength="50">
+                        </div>
+                        <div class="field-group">
+                            <label for="edit-edad">Edad</label>
+                            <input type="number" id="edit-edad" placeholder="Ej: 23" min="14" max="100">
+                        </div>
+                        <div class="field-group">
+                            <label for="edit-telefono">Teléfono</label>
+                            <input type="tel" id="edit-telefono" placeholder="Ej: +54 11 1234-5678" maxlength="30">
+                        </div>
+                        <div class="field-group field-full">
+                            <label for="edit-email">Email</label>
+                            <input type="email" id="edit-email" placeholder="Tu email" readonly
+                                   style="background:#f0f0f0; cursor:not-allowed; color:#888;"
+                                   title="El email no puede modificarse">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Cualidades ── -->
+                <div class="edit-card">
+                    <h2><i class="fa-solid fa-star"></i> Cualidades</h2>
+                    <div class="tags-editor">
+                        <label>Cualidades actuales (hacé clic en ✕ para eliminar)</label>
+                        <div class="tags-list" id="tags-cualidades"></div>
+                        <div class="tag-add-row">
+                            <input type="text" id="input-cualidad" placeholder="Ej: Empatía, Liderazgo..." maxlength="40"
+                                   aria-label="Nueva cualidad">
+                            <button type="button" class="btn-add-tag" onclick="agregarTag('cualidades')">
+                                <i class="fa-solid fa-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Habilidades ── -->
+                <div class="edit-card">
+                    <h2><i class="fa-solid fa-wrench"></i> Habilidades</h2>
+                    <div class="tags-editor">
+                        <label>Habilidades actuales (hacé clic en ✕ para eliminar)</label>
+                        <div class="tags-list" id="tags-habilidades"></div>
+                        <div class="tag-add-row">
+                            <input type="text" id="input-habilidad" placeholder="Ej: Cocina, Programación..." maxlength="40"
+                                   aria-label="Nueva habilidad">
+                            <button type="button" class="btn-add-tag" onclick="agregarTag('habilidades')">
+                                <i class="fa-solid fa-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Proyectos de Voluntariado ── -->
+                <div class="edit-card">
+                    <h2><i class="fa-solid fa-hands-helping"></i> Proyectos de Voluntariado</h2>
+                    <div id="proyectos-container"></div>
+                    <button type="button" class="btn-add-tag" id="btn-nuevo-proyecto"
+                            onclick="agregarProyecto()" style="margin-top:1em;">
+                        <i class="fa-solid fa-plus"></i> Agregar proyecto
+                    </button>
+                </div>
+
+                <!-- ── Acciones ── -->
+                <div class="acciones-footer">
+                    <a href="./perfil.html" class="btn-cancelar" id="btn-cancelar">
+                        <i class="fa-solid fa-xmark"></i> Cancelar
+                    </a>
+                    <button type="submit" class="btn-guardar" id="btn-guardar">
+                        <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- ── Toast de éxito ── -->
+    <div class="toast-success" id="toast-success" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check"></i> ¡Cambios guardados correctamente!
+    </div>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer class="footer">
+        <div class="footer-links">
+            <h2 class="footer-titulo">NAVEGACION</h2>
+            <ul class="footer-links-list">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Proyectos</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacto">
+            <h2 class="footer-titulo">CONTACTANOS</h2>
+            <div class="footer-contacto-info">
+                <a href="#">Almafuerte 3050, San Justo<br>
+                    (1754) Bs. As. Argentina
+                    011 4651 0101 / 09</a>
+                <p>
+                    <br>Teléfono: +54 11 XXXX-XXXX
+                    <br>Email: info@voluntariadoslamatanza.org
+                </p>
+            </div>
+            <div class="footer-contacto-social">
+                <h3 class="footer-titulo">Redes Sociales:</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══════════════ SCRIPTS ══════════════ -->
+    <script>
+        /* ─────────────────────────────────────────────────
+           UTILIDADES DE COOKIES
+           ───────────────────────────────────────────────── */
+        function setCookie(name, value, days) {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+            document.cookie = `${name}=${encodeURIComponent(JSON.stringify(value))};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+        }
+
+        function getCookie(name) {
+            const prefix = name + '=';
+            const cookies = document.cookie.split(';');
+            for (let c of cookies) {
+                c = c.trim();
+                if (c.startsWith(prefix)) {
+                    try {
+                        return JSON.parse(decodeURIComponent(c.substring(prefix.length)));
+                    } catch { return null; }
+                }
+            }
+            return null;
+        }
+
+        /* ─────────────────────────────────────────────────
+           ESTADO LOCAL (tags y proyectos)
+           ───────────────────────────────────────────────── */
+        let tagsCualidades  = [];
+        let tagsHabilidades = [];
+        let proyectos       = [];
+
+        /* ─────────────────────────────────────────────────
+           RENDERIZADO DE TAGS
+           ───────────────────────────────────────────────── */
+        function renderTags(tipo) {
+            const lista = tipo === 'cualidades' ? tagsCualidades : tagsHabilidades;
+            const contenedor = document.getElementById('tags-' + tipo);
+            contenedor.innerHTML = '';
+            lista.forEach((tag, idx) => {
+                const span = document.createElement('span');
+                span.className = 'tag-item';
+                span.innerHTML = `${tag}
+                    <button type="button" onclick="eliminarTag('${tipo}', ${idx})"
+                            aria-label="Eliminar ${tag}">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>`;
+                contenedor.appendChild(span);
+            });
+        }
+
+        function agregarTag(tipo) {
+            const inputId = tipo === 'cualidades' ? 'input-cualidad' : 'input-habilidad';
+            const input   = document.getElementById(inputId);
+            const valor   = input.value.trim();
+            if (!valor) return;
+
+            if (tipo === 'cualidades') {
+                if (!tagsCualidades.includes(valor)) tagsCualidades.push(valor);
+            } else {
+                if (!tagsHabilidades.includes(valor)) tagsHabilidades.push(valor);
+            }
+            input.value = '';
+            input.focus();
+            renderTags(tipo);
+        }
+
+        function eliminarTag(tipo, idx) {
+            if (tipo === 'cualidades') tagsCualidades.splice(idx, 1);
+            else                        tagsHabilidades.splice(idx, 1);
+            renderTags(tipo);
+        }
+
+        /* Agregar tag con Enter */
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('input-cualidad').addEventListener('keydown', e => {
+                if (e.key === 'Enter') { e.preventDefault(); agregarTag('cualidades'); }
+            });
+            document.getElementById('input-habilidad').addEventListener('keydown', e => {
+                if (e.key === 'Enter') { e.preventDefault(); agregarTag('habilidades'); }
+            });
+        });
+
+        /* ─────────────────────────────────────────────────
+           PROYECTOS
+           ───────────────────────────────────────────────── */
+        function renderProyectos() {
+            const contenedor = document.getElementById('proyectos-container');
+            contenedor.innerHTML = '';
+            proyectos.forEach((p, idx) => {
+                const div = document.createElement('div');
+                div.className = 'proyecto-edit';
+                div.innerHTML = `
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8em;">
+                        <h3>Proyecto ${idx + 1}</h3>
+                        <button type="button" onclick="eliminarProyecto(${idx})"
+                                style="background:none;border:none;color:#e53e3e;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;gap:0.3em;"
+                                title="Eliminar proyecto">
+                            <i class="fa-solid fa-trash"></i> Eliminar
+                        </button>
+                    </div>
+                    <div class="fields-grid">
+                        <div class="field-group field-full">
+                            <label>Nombre del proyecto</label>
+                            <input type="text" value="${escHtml(p.nombre)}"
+                                   oninput="proyectos[${idx}].nombre = this.value"
+                                   placeholder="Ej: Apoyo Escolar" maxlength="80">
+                        </div>
+                        <div class="field-group field-full">
+                            <label>Descripción</label>
+                            <textarea rows="2"
+                                      oninput="proyectos[${idx}].descripcion = this.value"
+                                      placeholder="Breve descripción de tu rol..."
+                                      maxlength="200">${escHtml(p.descripcion)}</textarea>
+                        </div>
+                        <div class="field-group">
+                            <label>Horas aportadas</label>
+                            <input type="number" value="${escHtml(String(p.horas))}"
+                                   oninput="proyectos[${idx}].horas = this.value"
+                                   placeholder="Ej: 50" min="0" max="9999">
+                        </div>
+                    </div>`;
+                contenedor.appendChild(div);
+            });
+        }
+
+        function agregarProyecto() {
+            proyectos.push({ nombre: '', descripcion: '', horas: '' });
+            renderProyectos();
+            // Scroll suave al nuevo proyecto
+            document.getElementById('proyectos-container').lastElementChild
+                    ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function eliminarProyecto(idx) {
+            proyectos.splice(idx, 1);
+            renderProyectos();
+        }
+
+        function escHtml(str) {
+            return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+
+        /* ─────────────────────────────────────────────────
+           CARGA DE DATOS (cookies + sesión)
+           ───────────────────────────────────────────────── */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Protección: redirigir si no hay sesión
+            const sesion = obtenerSesion();
+            if (!sesion) {
+                window.location.href = './login.html';
+                return;
+            }
+
+            // Clave única por usuario en cookies
+            const claveUsuario = 'perfil_' + btoa(sesion.email).replace(/=/g,'');
+
+            // Leer datos guardados en cookie (si existen)
+            const datosCookie = getCookie(claveUsuario);
+
+            // Información personal
+            document.getElementById('edit-nombre').value    = datosCookie?.nombre    || sesion.nombre    || '';
+            document.getElementById('edit-apellido').value  = datosCookie?.apellido  || sesion.apellido  || '';
+            document.getElementById('edit-edad').value      = datosCookie?.edad      || '';
+            document.getElementById('edit-telefono').value  = datosCookie?.telefono  || '';
+            document.getElementById('edit-email').value     = sesion.email;
+
+            // Tags
+            tagsCualidades  = datosCookie?.cualidades  || ['Empatía', 'Creatividad', 'Compromiso', 'Trabajo en equipo'];
+            tagsHabilidades = datosCookie?.habilidades || ['Matemática básica', 'Cocina', 'Fútbol', 'Inglés avanzado'];
+            renderTags('cualidades');
+            renderTags('habilidades');
+
+            // Proyectos
+            proyectos = datosCookie?.proyectos || [
+                { nombre: 'Apoyo Escolar',                  descripcion: 'Ayudar a estudiantes en necesidad con su aprendizaje académico.', horas: 50 },
+                { nombre: 'Cocinero en comedor comunitario', descripcion: 'Preparar y servir comidas a personas en situación de vulnerabilidad.', horas: 20 }
+            ];
+            renderProyectos();
+
+            // Guardar clave en window para usarla al hacer submit
+            window._claveUsuario = claveUsuario;
+        });
+
+        /* ─────────────────────────────────────────────────
+           GUARDAR (cookie de 30 días)
+           ───────────────────────────────────────────────── */
+        document.getElementById('form-editar-perfil').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const datos = {
+                nombre:      document.getElementById('edit-nombre').value.trim(),
+                apellido:    document.getElementById('edit-apellido').value.trim(),
+                edad:        document.getElementById('edit-edad').value,
+                telefono:    document.getElementById('edit-telefono').value.trim(),
+                cualidades:  [...tagsCualidades],
+                habilidades: [...tagsHabilidades],
+                proyectos:   proyectos.map(p => ({
+                                nombre:      p.nombre.trim(),
+                                descripcion: p.descripcion.trim(),
+                                horas:       p.horas
+                             }))
+            };
+
+            setCookie(window._claveUsuario, datos, 30);
+
+            // Actualizar también el nombre en sessionStorage
+            const sesion = obtenerSesion();
+            if (sesion) {
+                sesion.nombre   = datos.nombre;
+                sesion.apellido = datos.apellido;
+                sessionStorage.setItem('sesionActiva', JSON.stringify(sesion));
+            }
+
+            // Mostrar toast
+            const toast = document.getElementById('toast-success');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+                // Redirigir al perfil después de un momento
+                setTimeout(() => { window.location.href = './perfil.html'; }, 300);
+            }, 1800);
+        });
+    </script>
+
+</body>
+</html>
