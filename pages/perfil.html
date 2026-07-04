@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="../css/globals/header.css" />
     <link rel="stylesheet" href="../css/globals/footer.css" />
     <link rel="stylesheet" href="../css/globals/globalStyles.css" />
-    <title>Perfil</title>
+    <script src="../js/auth.js" defer></script>
+    <title>Mi Perfil | Voluntariados La Matanza</title>
   </head>
   <body>
     <header class="header">
@@ -62,7 +63,7 @@
           </div>
 
           <div class="nombre-y-año">
-            <h1>Pepito Pérez</h1>
+            <h1 id="perfil-nombre">Pepito Pérez</h1>
             <p>Voluntario desde 2024</p>
           </div>
 
@@ -161,4 +162,27 @@
       </div>
     </footer>
   </body>
+
+  <script>
+    // Redirigir al login si no hay sesión activa
+    document.addEventListener('DOMContentLoaded', function () {
+      const sesion = obtenerSesion();
+      if (!sesion) {
+        window.location.href = './login.html';
+        return;
+      }
+      // Mostrar nombre del usuario logueado
+      const nombreEl = document.getElementById('perfil-nombre');
+      if (nombreEl && sesion.nombre) {
+        nombreEl.textContent = sesion.nombre + ' ' + (sesion.apellido || '');
+      }
+      // Actualizar el email en información personal
+      const emailEls = document.querySelectorAll('.informacion-personal p');
+      emailEls.forEach(el => {
+        if (el.innerHTML.includes('Email:')) {
+          el.innerHTML = '<strong>Email:</strong> ' + sesion.email;
+        }
+      });
+    });
+  </script>
 </html>

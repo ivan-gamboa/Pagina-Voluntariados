@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/globals/header.css">
     <link rel="stylesheet" href="../css/globals/footer.css">
     <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/auth.js" defer></script>
     <title> Iniciar sesión </title>
 </head>
 <body>
@@ -38,12 +39,13 @@
     <main>
         <div class="login-container">
             <h1>Iniciar sesión</h1>
-            <form action="#" method="post" class="login-form">
-                <input type="email" name="username" placeholder="Email" required class="login-input">
-                <input type="password" name="password" placeholder="Contraseña" required class="login-input">
+            <form id="login-form" action="#" method="post" class="login-form">
+                <input type="email" id="login-email" name="username" placeholder="Email" required class="login-input">
+                <input type="password" id="login-password" name="password" placeholder="Contraseña" required class="login-input">
+                <p id="login-error" style="color:#e53e3e; font-size:0.9rem; margin:0; display:none;"></p>
                 <button type="submit" class="login-button">Iniciar sesión</button>
             </form>
-            <p>¿No tienes una cuenta? <a href="#">Registrarse</a></p>
+            <p>¿No tienes una cuenta? <a href="./registro.html">Registrarse</a></p>
             <p>¿Olvidaste tu contraseña? <a href="#">Restablecer contraseña</a></p>
             <a href="index.html">Volver a inicio</a>
         </div>
@@ -78,5 +80,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+            const errorEl = document.getElementById('login-error');
+
+            const resultado = login(email, password);
+            if (resultado.ok) {
+                window.location.href = './index.html';
+            } else {
+                errorEl.textContent = resultado.mensaje;
+                errorEl.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
