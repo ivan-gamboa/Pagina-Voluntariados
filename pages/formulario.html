@@ -15,28 +15,28 @@
 
 <body>
 
-    <header class="header">
-        <div class="header-logo">
-            <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo de Voluntariados">
-            <span class="header-logo-text">Voluntariados<h3>La Matanza</h3> </span>
-        </div>
-        <span class="nav-toggle"><i class="fa-solid fa-bars"></i></span>
-        <nav class="header-nav">
-            <ul class="header-nav-list">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./map.html">Mapa</a></li>
-                <li><a href="./programas.html">Programas</a></li>
-            </ul>
-        </nav>
-        <div class="header-user">
-            <div class="header-user-actions">
-                <a href="./login.html" class="login">Iniciar sesión</a>
-            </div>
-            <div class="header-user-actions">
-                <a href="./registro.html" class="signup">Registrarse</a>
-            </div>
-        </div>
-    </header>
+  <header class="header">
+    <div class="header-logo">
+      <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo de Voluntariados">
+      <span class="header-logo-text">Voluntariados<h3>La Matanza</h3> </span>
+    </div>
+    <span class="nav-toggle"><i class="fa-solid fa-bars"></i></span>
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./map.html">Mapa</a></li>
+        <li><a href="./programas.html">Programas</a></li>
+      </ul>
+    </nav>
+    <div class="header-user">
+      <div class="header-user-actions">
+        <a href="./login.html" class="login">Iniciar sesión</a>
+      </div>
+      <div class="header-user-actions">
+        <a href="./registro.html" class="signup">Registrarse</a>
+      </div>
+    </div>
+  </header>
 
   <main class="pagina-formulario">
     <div class="contenedor">
@@ -55,11 +55,16 @@
       </div>
 
       <div id="form-donacion" class="formulario-escondido">
+
+        <div class="volver-eleccion" onclick="volverElegir()">
+          <i class="fas fa-arrow-left"></i>
+          <span>Volver a elegir</span>
+        </div>
         <form action="#" class="tarjeta-formulario">
           <h2>Donación de Insumos</h2>
 
           <label>Nombre y Apellido</label>
-          <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+          <input type="text" id="nombre" placeholder="Ej: Juan Perez" required>
 
           <label>Teléfono</label>
           <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
@@ -88,6 +93,12 @@
       </div>
 
       <div id="form-voluntario" class="formulario-escondido">
+
+        <div class="volver-eleccion" onclick="volverElegir()">
+          <i class="fas fa-arrow-left"></i>
+          <span>Volver a elegir</span>
+        </div>
+
         <form action="#" class="tarjeta-formulario">
           <h2>Inscripción como Voluntario</h2>
 
@@ -133,51 +144,61 @@
     </div>
   </main>
 
-    <footer class="footer">
-        <div class="footer-links">
-            <h2 class="footer-titulo">NAVEGACION</h2>
-            <ul class="footer-links-list">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./map.html">Mapa</a></li>
-                <li><a href="./programas.html">Programas</a></li>
-            </ul>
-        </div>
-        <div class="footer-contacto">
-            <h2 class="footer-titulo"> CONTACTANOS </h2>
-            <div class="footer-contacto-info">
-                <a href="#">Almafuerte 3050, San Justo<br>
-                    (1754) Bs. As. Argentina
-                    011 4651 0101 / 09 </a>
-                <p>
-                    <br>Teléfono: +54 11 XXXX-XXXX
-                    <br>Email: info@voluntariadoslamatanza.org
-                </p>
-            </div>
-            <div class="footer-contacto-social">
-                <h3 class="footer-titulo">Redes Sociales:</h3>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+  <footer class="footer">
+    <div class="footer-links">
+      <h2 class="footer-titulo">NAVEGACION</h2>
+      <ul class="footer-links-list">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./map.html">Mapa</a></li>
+        <li><a href="./programas.html">Programas</a></li>
+      </ul>
+    </div>
+    <div class="footer-contacto">
+      <h2 class="footer-titulo"> CONTACTANOS </h2>
+      <div class="footer-contacto-info">
+        <a href="#">Almafuerte 3050, San Justo<br>
+          (1754) Bs. As. Argentina
+          011 4651 0101 / 09 </a>
+        <p>
+          <br>Teléfono: +54 11 XXXX-XXXX
+          <br>Email: info@voluntariadoslamatanza.org
+        </p>
+      </div>
+      <div class="footer-contacto-social">
+        <h3 class="footer-titulo">Redes Sociales:</h3>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
     <script>
-
       function elegirTipo(tipo) {
-        document.getElementById('pantalla-eleccion').style.display = 'none';
 
-        if (tipo === 1) {
-          document.getElementById('form-donacion').style.display = 'block';
+        document.getElementById("pantalla-eleccion").style.display = "none";
+
+        if (tipo == 1) {
+          document.getElementById("form-donacion").style.display = "block";
+          document.getElementById("form-voluntario").style.display = "none";
         } else {
-          document.getElementById('form-voluntario').style.display = 'block';
+          document.getElementById("form-voluntario").style.display = "block";
+          document.getElementById("form-donacion").style.display = "none";
         }
       }
 
-      function confirmarDonacion() {
-        const nombre = document.getElementById('nombre').value.trim();
-        const donacion = document.getElementById('donacion').value.trim();
-        const barrio = document.getElementById('barrio').value.trim();
-        const fecha = document.getElementById('fecha').value;
+      function volverElegir() {
 
+        document.getElementById("form-donacion").style.display = "none";
+        document.getElementById("form-voluntario").style.display = "none";
+
+        document.getElementById("pantalla-eleccion").style.display = "flex";
+      }
+
+      function confirmarDonacion() {
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const donacion = document.getElementById("donacion").value.trim();
+        const barrio = document.getElementById("barrio").value.trim();
+        const fecha = document.getElementById("fecha").value;
 
         if (!nombre || !donacion || !barrio || !fecha) {
           alert("Por favor completa todos los campos antes de confirmar.");
@@ -185,21 +206,17 @@
         }
 
         const datos = {
-          nombre: nombre,
-          donacion: donacion,
-          barrio: barrio,
-          fecha: fecha
+          nombre,
+          donacion,
+          barrio,
+          fecha
         };
 
-        localStorage.setItem('datosDonacion', JSON.stringify(datos));
-        window.location.href = 'paginaConfirmacion.html';
+        localStorage.setItem("datosDonacion", JSON.stringify(datos));
 
-        function inscribirVoluntario() {
-
-          alert("Inscripción como voluntario registrada correctamente");
-          window.location.href = 'paginaConfirmacion.html';
-        }
+        window.location.href = "paginaConfirmacion.html";
       }
+
     </script>
 </body>
 

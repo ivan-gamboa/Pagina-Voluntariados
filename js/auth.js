@@ -99,4 +99,20 @@ function actualizarHeader() {
 document.addEventListener("DOMContentLoaded", () => {
     inicializarUsuarios();
     actualizarHeader();
+    actualizarInscripcion();
 });
+document.addEventListener("click", (event) => {
+    if (event.target.id === "nav-cerrar-sesion") {
+        logout();
+    }
+});
+function actualizarInscripcion() {
+    const contenedor = document.querySelector("#btn-inscribirse");
+    if (!contenedor) return;
+
+    const sesion = obtenerSesion();
+
+    if (sesion) {
+        contenedor.href = "./formulario.html";
+    } else {
+        contenedor.href = "./login.html";}}

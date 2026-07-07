@@ -1,7 +1,6 @@
-
 .pagina-confirmacion {
   padding: 120px 20px 100px;
-  background: linear-gradient(135deg, #dadada, #003087);
+  background: linear-gradient(135deg, var(--color-principal), var(--color-terciario));
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -17,7 +16,7 @@
   padding: 60px 50px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
   color: #333;
 }
 

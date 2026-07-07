@@ -138,7 +138,7 @@ body {
   gap: 15px;
   padding: 40px 30px;
   background: white;
-  border: 3px solid #ddd;
+  border: 3px solid #FF6B00;
   border-radius: 16px;
   width: 280px;
   cursor: pointer;
@@ -147,7 +147,7 @@ body {
 }
 
 .boton-eleccion:hover {
-  border-color: var(--celeste-principal);
+  border-color: var(--naranja-principal);
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 180, 216, 0.2);
 }
@@ -185,24 +185,29 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: var(--celeste-principal);
+  border-color: var(--naranja-principal);
   outline: none;
 }
-
 .grupo-checkbox {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 15px 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 30px;
+  margin: 15px 0 25px;
 }
 
 .grupo-checkbox label {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px;
-  border-radius: 8px;
+  gap: 12px;
+  font-weight: 500;
+  margin: 0;
   cursor: pointer;
+}
+
+.grupo-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .pie-pagina {
@@ -249,7 +254,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .lista-enlaces a:hover {
-  color: var(--celeste-principal);
+  color: var(--naranja-principal);
 }
 
 .redes-sociales a {
@@ -262,7 +267,27 @@ input:focus, select:focus, textarea:focus {
   color: var(--celeste-principal);
 }
 
+.volver-eleccion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--azul-principal);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
 
+.volver-eleccion:hover {
+    color: var(--celeste-principal);
+    transform: translateX(-5px);
+}
+
+.volver-eleccion i {
+    font-size: 1.2rem;
+}
 
 @media (max-width: 768px) {
   .contenido-pie {
