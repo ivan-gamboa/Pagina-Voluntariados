@@ -1,0 +1,139 @@
+body{
+    background:#f5f5f5;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.detalle-perfil{
+    max-width:68.75em;     
+    margin:2.5em auto;   
+    padding:1.25em;        
+}
+
+.perfil-header{
+    background:rgb(126, 170, 201);
+    border-radius:0.9em;  
+    display:flex;
+    align-items:center;
+    gap:2.5em;              
+    padding:1.88em;        
+    box-shadow:0 0.31em 0.94em #0909091a;
+}
+
+.imagen-de-perfil img{
+    width:10.6em;        
+    height: auto;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.nombre-y-año{
+    flex:1;
+}
+
+.nombre-y-año h1{
+    margin-bottom:0.63em; 
+    color:#f8f8f8;
+}
+
+.nombre-y-año p{
+    color:#d9d9d9;
+}
+
+.informacion-personal{
+    min-width:17.5em;     
+}
+
+.informacion-personal h2{
+    margin-bottom:0.94em; 
+}
+
+.informacion-personal p{
+    margin-bottom:0.5em; 
+}
+
+.informacion-perfil{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.56em;            
+    margin-top:1.88em;     
+}
+
+.informacion-aptitudes,
+.informacion-voluntariado{
+    background:rgb(240, 255, 254);
+    border-radius:0.9em;
+    padding:1.56em;
+    box-shadow:0 0.31em 0.94em rgba(0,0,0,.1);
+}
+
+.aptitud{
+    margin-bottom:1.88em;
+}
+
+.aptitud:last-child{
+    margin-bottom:0;
+}
+
+.aptitud h2{
+    margin-bottom:0.63em;
+    font-weight: 800;
+    color:#ff922c
+}
+
+.aptitud ul{
+    padding-left:1.25em;
+}
+
+.aptitud li{
+    margin-bottom:0.5em;
+    color: #00052e;
+    font-weight: 600;
+}
+
+.informacion-voluntariado h2{
+    margin-bottom:0.6em;
+    font-weight: 800;
+    color:#ff922c
+}
+
+.informacion-voluntariado p{
+    color: #00052e;
+    font-weight: 500;
+}
+
+.proyecto{
+    border-left:0.31em solid #2E7D32;
+    padding-left:0.94em;
+    margin-bottom:1.56em;
+}
+
+.proyecto:last-child{
+    margin-bottom:0;
+}
+
+.proyecto h3{
+    margin-bottom:0.6em;
+    color:#2E7D32;
+    font-weight: 700;
+}
+
+.proyecto p{
+    margin-bottom:0.38em;
+}
+
+@media (max-width:56.25em){ 
+
+    .perfil-header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .informacion-personal{
+        width:100%;
+    }
+
+    .informacion-perfil{
+        grid-template-columns:1fr;
+    }
+
+}
