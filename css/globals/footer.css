@@ -1,10 +1,9 @@
 .footer {
-    background: linear-gradient(to right, var(--color-terciarioDegradado), var(--color-secundario));
+    background: url('/img/header-2025.jpg')center center/cover no-repeat;
     color: var(--color-texto);
     padding: 1.5em;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: auto;
     padding-bottom: 0.5em;
 }
@@ -19,7 +18,7 @@
     padding: 0.5em 3em 0.5em 1em;
     border-right: 1px solid var(--color-texto);
     gap: 1rem;
-    height: 12.5em;
+    height: auto;
     margin-bottom: 1rem;
 }
 
@@ -37,7 +36,7 @@
 }
 
 .footer-contacto {
-    height: 12.5em;
+    height: auto;
     width: auto;
     display: flex;
     flex-direction: column;

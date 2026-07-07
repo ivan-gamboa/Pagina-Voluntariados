@@ -2,7 +2,7 @@ body {
     font-family: "Platform-Regular", sans-serif;
     color: var(--color-texto);
     height: 100vh;
-    font-size: 100%;
+    font-size: 18px;
 }
 
 a {
