@@ -118,11 +118,10 @@
                 <!-- ── Proyectos de Voluntariado ── -->
                 <div class="edit-card">
                     <h2><i class="fa-solid fa-hands-helping"></i> Proyectos de Voluntariado</h2>
+                    <p style="font-size: 0.9em; color: #666; margin-bottom: 1em;">
+                        <i class="fa-solid fa-circle-info"></i> Esta información es gestionada por el sistema y no puede ser editada.
+                    </p>
                     <div id="proyectos-container"></div>
-                    <button type="button" class="btn-add-tag" id="btn-nuevo-proyecto"
-                            onclick="agregarProyecto()" style="margin-top:1em;">
-                        <i class="fa-solid fa-plus"></i> Agregar proyecto
-                    </button>
                 </div>
 
                 <!-- ── Acciones ── -->
@@ -269,48 +268,29 @@
                 div.innerHTML = `
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8em;">
                         <h3>Proyecto ${idx + 1}</h3>
-                        <button type="button" onclick="eliminarProyecto(${idx})"
-                                style="background:none;border:none;color:#e53e3e;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;gap:0.3em;"
-                                title="Eliminar proyecto">
-                            <i class="fa-solid fa-trash"></i> Eliminar
-                        </button>
                     </div>
                     <div class="fields-grid">
                         <div class="field-group field-full">
                             <label>Nombre del proyecto</label>
-                            <input type="text" value="${escHtml(p.nombre)}"
-                                   oninput="proyectos[${idx}].nombre = this.value"
-                                   placeholder="Ej: Apoyo Escolar" maxlength="80">
+                            <input type="text" value="${escHtml(p.nombre)}" readonly
+                                   style="background:#f0f0f0; cursor:not-allowed; color:#888;"
+                                   title="El proyecto no puede modificarse">
                         </div>
                         <div class="field-group field-full">
                             <label>Descripción</label>
-                            <textarea rows="2"
-                                      oninput="proyectos[${idx}].descripcion = this.value"
-                                      placeholder="Breve descripción de tu rol..."
-                                      maxlength="200">${escHtml(p.descripcion)}</textarea>
+                            <textarea rows="2" readonly
+                                      style="background:#f0f0f0; cursor:not-allowed; color:#888; resize:none;"
+                                      title="El proyecto no puede modificarse">${escHtml(p.descripcion)}</textarea>
                         </div>
                         <div class="field-group">
                             <label>Horas aportadas</label>
-                            <input type="number" value="${escHtml(String(p.horas))}"
-                                   oninput="proyectos[${idx}].horas = this.value"
-                                   placeholder="Ej: 50" min="0" max="9999">
+                            <input type="number" value="${escHtml(String(p.horas))}" readonly
+                                   style="background:#f0f0f0; cursor:not-allowed; color:#888;"
+                                   title="El proyecto no puede modificarse">
                         </div>
                     </div>`;
                 contenedor.appendChild(div);
             });
-        }
-
-        function agregarProyecto() {
-            proyectos.push({ nombre: '', descripcion: '', horas: '' });
-            renderProyectos();
-            // Scroll suave al nuevo proyecto
-            document.getElementById('proyectos-container').lastElementChild
-                    ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function eliminarProyecto(idx) {
-            proyectos.splice(idx, 1);
-            renderProyectos();
         }
 
         function escHtml(str) {
