@@ -292,7 +292,7 @@
                                 role="button"
                             >
                                 <i class="bi bi-pencil-square" aria-hidden="true"></i>
-                                Inscribirme ahora
+                                Elegi como queres ayudar
                             </a>
                         </div>
 
@@ -333,6 +333,21 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnInscribirse = document.getElementById('btn-inscribirse');
+            if (btnInscribirse) {
+                btnInscribirse.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (typeof obtenerSesion === 'function' && obtenerSesion()) {
+                        window.location.href = './formulario.html';
+                    } else {
+                        window.location.href = './login.html?redirect=formulario.html';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
