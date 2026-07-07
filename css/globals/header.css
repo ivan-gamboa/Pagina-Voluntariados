@@ -30,7 +30,7 @@
     height: 100%;
 }
 .header-logo-text {
-    font-family: "Platform-Bold", sans-serif;
+    font-family:  'Montserrat', sans-serif;
 }
 .nav-toggle {
     display: none;
@@ -49,6 +49,7 @@
     list-style: none;
     font-size: 1.2rem;
     gap: 1em;
+    margin-bottom: 0;
 }
 .header-nav-list li {
     width: auto;

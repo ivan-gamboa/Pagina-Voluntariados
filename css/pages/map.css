@@ -25,7 +25,7 @@ i {
   max-width: 1280px;
   margin: 0 auto;
   padding: 48px 0 80px;
-  font-family: "Helvetica";
+  font-family: 'Montserrat', sans-serif;
   color: var(--gris-texto);
 }
 

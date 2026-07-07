@@ -1,8 +1,10 @@
 body {
-    font-family: "Platform-Regular", sans-serif;
+    font-family:  'Montserrat', sans-serif;
     color: var(--color-texto);
     height: 100vh;
-    font-size: 100%;
+    font-size: 18px;
+    line-height: 1.6;
+
 }
 
 a {
