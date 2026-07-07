@@ -1,0 +1,86 @@
+
+.pagina-confirmacion {
+  padding: 120px 20px 100px;
+  background: linear-gradient(135deg, #dadada, #003087);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-confirmacion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tarjeta-exito {
+  background: white;
+  padding: 60px 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  color: #333;
+}
+
+.icono-exito {
+  font-size: 6rem;
+  color: #00B4D8;
+  margin-bottom: 20px;
+}
+
+.detalle-exito {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.botones-exito {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.boton-principal {
+  background-color: var(--celeste-principal);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.boton-principal:hover {
+  background-color: #545f61;
+  transform: translateY(-2px);
+}
+
+.boton-secundario {
+  background-color: white;
+  color: var(--azul-principal);
+  border: 2px solid var(--azul-principal);
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.boton-secundario:hover {
+  background-color: var(--celeste-principal);
+  color: white;
+  border-color: var(--celeste-principal);
+}
+
+
+.contenido-pie {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;
+}

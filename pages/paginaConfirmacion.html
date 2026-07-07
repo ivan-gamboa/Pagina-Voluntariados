@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación - Red de Voluntariado Municipal</title>
+  <link rel="stylesheet" href="../css/formulario.css">
+  <link rel="stylesheet" href="../css/paginaConfirmacion.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-logo">
+            <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo de Voluntariados">
+            <span class="header-logo-text">Voluntariados<h3>La Matanza</h3> </span>
+        </div>
+        <span class="nav-toggle"><i class="fa-solid fa-bars"></i></span>
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./map.html">Mapa</a></li>
+                <li><a href="./programas.html">Programas</a></li>
+            </ul>
+        </nav>
+        <div class="header-user">
+            <div class="header-user-actions">
+                <a href="./login.html" class="login">Iniciar sesión</a>
+            </div>
+            <div class="header-user-actions">
+                <a href="./registro.html" class="signup">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+  <main class="pagina-confirmacion">
+    <div class="contenedor-confirmacion">
+      <div class="tarjeta-exito">
+        <i class="fas fa-check-circle icono-exito"></i>
+        <h1>¡Gracias!</h1>
+        <h2>Tu donación ha sido registrada correctamente</h2>
+        <p>Nos pondremos en contacto pronto para coordinar la entrega.</p>
+        
+        <div class="detalle-exito" id="datos-donacion">
+        
+        </div>
+
+        <div class="botones-exito">
+          <a href="index.html" class="boton-principal grande">Volver al Inicio</a>
+          <a href="formulario.html" class="boton-secundario grande">Hacer otra donación</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <h2 class="footer-titulo">NAVEGACION</h2>
+            <ul class="footer-links-list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./map.html">Mapa</a></li>
+                <li><a href="./programas.html">Programas</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacto">
+            <h2 class="footer-titulo"> CONTACTANOS </h2>
+            <div class="footer-contacto-info">
+                <a href="#">Almafuerte 3050, San Justo<br>
+                    (1754) Bs. As. Argentina
+                    011 4651 0101 / 09 </a>
+                <p>
+                    <br>Teléfono: +54 11 XXXX-XXXX
+                    <br>Email: info@voluntariadoslamatanza.org
+                </p>
+            </div>
+            <div class="footer-contacto-social">
+                <h3 class="footer-titulo">Redes Sociales:</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+  <script>
+    const datos = JSON.parse(localStorage.getItem('datosDonacion'));
+
+    if (datos) {
+      document.getElementById('datos-donacion').innerHTML = `
+        <p><strong>Donación:</strong> ${datos.donacion}</p>
+        <p><strong>Barrio:</strong> ${datos.barrio}</p>
+        <p><strong>Fecha estimada:</strong> ${datos.fecha}</p>
+      `;
+    } else {
+      document.getElementById('datos-donacion').innerHTML = `
+        <p>No se encontraron datos de la donación.</p>
+      `;
+    }
+  </script>
+</body>
+</html>

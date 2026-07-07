@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiero Ayudar - Red de Voluntariado Municipal</title>
+  <link rel="icon" href="../img/Logo Voluntariados.png" type="image/png">
+  <link rel="stylesheet" href="../css/formulario.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/globals/header.css">
+  <link rel="stylesheet" href="../css/globals/footer.css">
+  <link rel="stylesheet" href="../css/globals/globalStyles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-logo">
+            <img class="header-logo-img" src="../img/Logo Voluntariados.png" alt="Logo de Voluntariados">
+            <span class="header-logo-text">Voluntariados<h3>La Matanza</h3> </span>
+        </div>
+        <span class="nav-toggle"><i class="fa-solid fa-bars"></i></span>
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./map.html">Mapa</a></li>
+                <li><a href="./programas.html">Programas</a></li>
+            </ul>
+        </nav>
+        <div class="header-user">
+            <div class="header-user-actions">
+                <a href="./login.html" class="login">Iniciar sesión</a>
+            </div>
+            <div class="header-user-actions">
+                <a href="./registro.html" class="signup">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+  <main class="pagina-formulario">
+    <div class="contenedor">
+      <h1 class="titulo-formulario">Quiero Ayudar</h1>
+      <p class="subtitulo-formulario">¿Cómo querés colaborar con la comunidad?</p>
+
+      <div id="pantalla-eleccion" class="eleccion-inicial">
+        <button onclick="elegirTipo(1)" class="boton-eleccion">
+          <i class="fas fa-box fa-3x"></i>
+          <span>Donar Insumos</span>
+        </button>
+        <button onclick="elegirTipo(2)" class="boton-eleccion">
+          <i class="fas fa-hands-helping fa-3x"></i>
+          <span>Ser Voluntario</span>
+        </button>
+      </div>
+
+      <div id="form-donacion" class="formulario-escondido">
+        <form action="#" class="tarjeta-formulario">
+          <h2>Donación de Insumos</h2>
+
+          <label>Nombre y Apellido</label>
+          <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+
+          <label>Teléfono</label>
+          <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
+
+          <label>Email</label>
+          <input type="email" id="email" placeholder="tuemail@ejemplo.com" required>
+
+          <label>Barrio / Zona</label>
+          <input type="text" id="barrio" placeholder="Ej: San Justo, Ramos Mejía" required>
+
+          <label>¿Qué querés donar?</label>
+          <textarea id="donacion" rows="4" placeholder="Ej: 10 kg de arroz, 5 litros de leche..." required></textarea>
+
+          <label>¿Cuándo podés acercar la donación?</label>
+          <select id="fecha" required>
+            <option value="">Seleccionar opción...</option>
+            <option>Esta semana</option>
+            <option>El fin de semana</option>
+            <option>En los próximos 15 días</option>
+          </select>
+
+          <button type="button" onclick="confirmarDonacion()" class="boton-principal grande">
+            Confirmar Donación
+          </button>
+        </form>
+      </div>
+
+      <div id="form-voluntario" class="formulario-escondido">
+        <form action="#" class="tarjeta-formulario">
+          <h2>Inscripción como Voluntario</h2>
+
+          <label>Nombre y Apellido</label>
+          <input type="text" placeholder="Ej: María González" required>
+
+          <label>Edad</label>
+          <input type="number" min="16" placeholder="Ej: 28" required>
+
+          <label>Teléfono</label>
+          <input type="tel" placeholder="Ej: 11 1234-5678" required>
+
+          <label>Email</label>
+          <input type="email" placeholder="tuemail@ejemplo.com" required>
+
+          <label>Barrio / Zona</label>
+          <input type="text" placeholder="Ej: Villa Celina" required>
+
+          <label>¿En qué podés ayudar?</label>
+          <div class="grupo-checkbox">
+            <label><input type="checkbox"> Repartir comida</label>
+            <label><input type="checkbox"> Cocinar en merendero</label>
+            <label><input type="checkbox"> Apoyo escolar</label>
+            <label><input type="checkbox"> Limpieza y mantenimiento</label>
+            <label><input type="checkbox"> Transporte / Logística</label>
+            <label><input type="checkbox"> Otro</label>
+          </div>
+
+          <label>Disponibilidad</label>
+          <select required>
+            <option value="">Seleccionar disponibilidad...</option>
+            <option>Fines de semana</option>
+            <option>Entre semana por la tarde</option>
+            <option>Full time</option>
+          </select>
+
+          <button type="button" onclick="window.location.href='paginaConfirmacionVoluntario.html'"
+            class="boton-principal grande">
+            Inscribirme como Voluntario
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <h2 class="footer-titulo">NAVEGACION</h2>
+            <ul class="footer-links-list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./map.html">Mapa</a></li>
+                <li><a href="./programas.html">Programas</a></li>
+            </ul>
+        </div>
+        <div class="footer-contacto">
+            <h2 class="footer-titulo"> CONTACTANOS </h2>
+            <div class="footer-contacto-info">
+                <a href="#">Almafuerte 3050, San Justo<br>
+                    (1754) Bs. As. Argentina
+                    011 4651 0101 / 09 </a>
+                <p>
+                    <br>Teléfono: +54 11 XXXX-XXXX
+                    <br>Email: info@voluntariadoslamatanza.org
+                </p>
+            </div>
+            <div class="footer-contacto-social">
+                <h3 class="footer-titulo">Redes Sociales:</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    <script>
+
+      function elegirTipo(tipo) {
+        document.getElementById('pantalla-eleccion').style.display = 'none';
+
+        if (tipo === 1) {
+          document.getElementById('form-donacion').style.display = 'block';
+        } else {
+          document.getElementById('form-voluntario').style.display = 'block';
+        }
+      }
+
+      function confirmarDonacion() {
+        const nombre = document.getElementById('nombre').value.trim();
+        const donacion = document.getElementById('donacion').value.trim();
+        const barrio = document.getElementById('barrio').value.trim();
+        const fecha = document.getElementById('fecha').value;
+
+
+        if (!nombre || !donacion || !barrio || !fecha) {
+          alert("Por favor completa todos los campos antes de confirmar.");
+          return;
+        }
+
+        const datos = {
+          nombre: nombre,
+          donacion: donacion,
+          barrio: barrio,
+          fecha: fecha
+        };
+
+        localStorage.setItem('datosDonacion', JSON.stringify(datos));
+        window.location.href = 'paginaConfirmacion.html';
+
+        function inscribirVoluntario() {
+
+          alert("Inscripción como voluntario registrada correctamente");
+          window.location.href = 'paginaConfirmacion.html';
+        }
+      }
+    </script>
+</body>
+
+</html>
