@@ -311,10 +311,7 @@ a { text-decoration: none; }
   border-radius: var(--radius-card) var(--radius-card) 0 0;
 }
 
-.vlm-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-card-hover) !important;
-}
+
 
 /* Cada card tiene su propio color de acento */
 .vlm-card:nth-child(1)::before { background: linear-gradient(90deg, #14417b, #00a4bd); }
@@ -334,11 +331,6 @@ a { text-decoration: none; }
   font-size: 30px;
   box-shadow: 0 4px 16px rgba(20,65,123,0.15);
   transition: transform 0.25s ease, background 0.25s ease;
-}
-.vlm-card:hover .vlm-icon-circle {
-  background: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
-  color: #fff;
-  transform: scale(1.1);
 }
 
 /* ============ PROGRAMAS (Sección 3) ============ */
@@ -565,13 +557,6 @@ a { text-decoration: none; }
 .step-item:nth-child(1) .step-icon { color: var(--color-primario); }
 .step-item:nth-child(2) .step-icon { color: var(--color-terciario); }
 .step-item:nth-child(3) .step-icon { color: var(--color-secundario); }
-
-.step-item:hover .step-icon {
-  background: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
-  color: #ffffff;
-  transform: scale(1.1);
-  box-shadow: var(--shadow-lg), 0 0 0 8px rgba(20,65,123,0.12);
-}
 
 .step-number {
   display: inline-block;
