@@ -230,12 +230,6 @@ a { text-decoration: none; }
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.requirement-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(20, 65, 123, 0.18);
-}
-
 .req-icon {
   width: 46px;
   height: 46px;
@@ -250,10 +244,6 @@ a { text-decoration: none; }
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-.requirement-item:hover .req-icon {
-  background: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
-  color: #fff;
-}
 
 .req-label {
   font-size: 11px;
@@ -519,19 +509,6 @@ a { text-decoration: none; }
   transition: background 0.25s, color 0.25s, transform 0.25s;
   z-index: 1;
 }
-
-.timeline-item:hover .timeline-bullet {
-  background: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
-  color: #fff;
-  border-color: transparent;
-  transform: scale(1.1);
-}
-
-.timeline-item:nth-child(2) .timeline-bullet { border-color: var(--color-terciario); color: var(--color-terciario); }
-.timeline-item:nth-child(2):hover .timeline-bullet { background: linear-gradient(135deg, var(--color-terciario), #0090a8); border-color: transparent; color: #fff; }
-
-.timeline-item:nth-child(3) .timeline-bullet { border-color: var(--color-secundario); color: var(--color-secundario); }
-.timeline-item:nth-child(3):hover .timeline-bullet { background: linear-gradient(135deg, var(--color-secundario), #d6741f); border-color: transparent; color: #fff; }
 
 .timeline-text {}
 .timeline-item-title {
