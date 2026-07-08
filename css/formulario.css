@@ -64,7 +64,7 @@ body {
 }
 
 .boton-principal {
-  background-color: var(--celeste-principal);
+  background-color: var(--naranja-principal);
   color: white;
   padding: 10px 24px;
   border-radius: 8px;
@@ -74,7 +74,7 @@ body {
 }
 
 .boton-principal:hover {
-  background-color: #0099B8;
+  background-color:  var(--naranja-principal);
   transform: translateY(-2px);
 }
 
