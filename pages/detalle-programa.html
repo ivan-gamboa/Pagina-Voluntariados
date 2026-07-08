@@ -339,11 +339,7 @@
             if (btnInscribirse) {
                 btnInscribirse.addEventListener('click', (e) => {
                     e.preventDefault();
-                    if (typeof obtenerSesion === 'function' && obtenerSesion()) {
-                        window.location.href = './formulario.html';
-                    } else {
-                        window.location.href = './login.html?redirect=formulario.html';
-                    }
+                    window.location.href = './formulario.html';
                 });
             }
         });

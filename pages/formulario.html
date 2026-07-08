@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/globals/header.css">
   <link rel="stylesheet" href="../css/globals/footer.css">
   <link rel="stylesheet" href="../css/globals/globalStyles.css">
+  <script src="../js/auth.js" defer></script>
 </head>
 
 <body>
@@ -103,16 +104,16 @@
           <h2>Inscripción como Voluntario</h2>
 
           <label>Nombre y Apellido</label>
-          <input type="text" placeholder="Ej: María González" required>
+          <input type="text" id="nombre-vol" placeholder="Ej: María González" required>
 
           <label>Edad</label>
           <input type="number" min="16" placeholder="Ej: 28" required>
 
           <label>Teléfono</label>
-          <input type="tel" placeholder="Ej: 11 1234-5678" required>
+          <input type="tel" id="telefono-vol" placeholder="Ej: 11 1234-5678" required>
 
           <label>Email</label>
-          <input type="email" placeholder="tuemail@ejemplo.com" required>
+          <input type="email" id="email-vol" placeholder="tuemail@ejemplo.com" required>
 
           <label>Barrio / Zona</label>
           <input type="text" placeholder="Ej: Villa Celina" required>
@@ -173,17 +174,36 @@
     </div>
     <script>
       function elegirTipo(tipo) {
+        const sesion = typeof obtenerSesion === 'function' ? obtenerSesion() : null;
+        if (!sesion) {
+          window.location.href = './login.html?redirect=' + encodeURIComponent('formulario.html?form=' + tipo);
+          return;
+        }
 
         document.getElementById("pantalla-eleccion").style.display = "none";
 
         if (tipo == 1) {
           document.getElementById("form-donacion").style.display = "block";
           document.getElementById("form-voluntario").style.display = "none";
+          document.getElementById("nombre").value = (sesion.nombre + " " + sesion.apellido).trim();
+          document.getElementById("email").value = sesion.email;
+          if (sesion.telefono) document.getElementById("telefono").value = sesion.telefono;
         } else {
           document.getElementById("form-voluntario").style.display = "block";
           document.getElementById("form-donacion").style.display = "none";
+          document.getElementById("nombre-vol").value = (sesion.nombre + " " + sesion.apellido).trim();
+          document.getElementById("email-vol").value = sesion.email;
+          if (sesion.telefono) document.getElementById("telefono-vol").value = sesion.telefono;
         }
       }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          const formType = params.get('form');
+          if (formType) {
+              elegirTipo(parseInt(formType));
+          }
+      });
 
       function volverElegir() {
 
